@@ -1,0 +1,16 @@
+[remap]
+
+importer="aseprite_wizard.plugin.static-texture"
+type="AtlasTexture"
+uid="uid://ddbma1b120i3t"
+path="res://.godot/imported/firefly_placeholder.aseprite-2e861c4aeeda8b77b348168818002f64.res"
+
+[deps]
+
+source_file="res://sprites/firefly_placeholder.aseprite"
+dest_files=["res://.godot/imported/firefly_placeholder.aseprite-2e861c4aeeda8b77b348168818002f64.res"]
+
+[params]
+
+exclude_layers_pattern=""
+only_visible_layers=false
