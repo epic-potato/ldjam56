@@ -1,0 +1,16 @@
+[remap]
+
+importer="aseprite_wizard.plugin.static-texture"
+type="AtlasTexture"
+uid="uid://cd5nxxkj1vkjt"
+path="res://.godot/imported/frog.aseprite-9fbc03396c053572e8351c93539fb79c.res"
+
+[deps]
+
+source_file="res://sprites/frog.aseprite"
+dest_files=["res://.godot/imported/frog.aseprite-9fbc03396c053572e8351c93539fb79c.res"]
+
+[params]
+
+exclude_layers_pattern=""
+only_visible_layers=false

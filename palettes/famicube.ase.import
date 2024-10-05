@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://dgdnjdlk36kvf"
+path="res://.godot/imported/famicube.ase-c2ea62bc132b4e262c25ab2a34139bab.res"
+
+[deps]
+
+source_file="res://palettes/famicube.ase"
+dest_files=["res://.godot/imported/famicube.ase-c2ea62bc132b4e262c25ab2a34139bab.res"]
+
+[params]
+
