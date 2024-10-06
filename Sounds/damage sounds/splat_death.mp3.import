@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cdes16ljw7xg6"
+path="res://.godot/imported/splat_death.mp3-d09204eafed19bf6ce8c9d7b53a1836d.mp3str"
+
+[deps]
+
+source_file="res://Sounds/damage sounds/splat_death.mp3"
+dest_files=["res://.godot/imported/splat_death.mp3-d09204eafed19bf6ce8c9d7b53a1836d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

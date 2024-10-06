@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dv31j3wsy2611"
+path="res://.godot/imported/frog-croaks-22312.mp3-d69c78a52e83d642c02c62119abde463.mp3str"
+
+[deps]
+
+source_file="res://Sounds/frog ribbit sounds/frog-croaks-22312.mp3"
+dest_files=["res://.godot/imported/frog-croaks-22312.mp3-d69c78a52e83d642c02c62119abde463.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

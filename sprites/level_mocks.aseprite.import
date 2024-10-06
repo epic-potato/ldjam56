@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://bb3xsdumuahuk"
+path="res://.godot/imported/level_mocks.aseprite-7dbcc1cc928c97b59aee187a03d87306.res"
+
+[deps]
+
+source_file="res://sprites/level_mocks.aseprite"
+dest_files=["res://.godot/imported/level_mocks.aseprite-7dbcc1cc928c97b59aee187a03d87306.res"]
+
+[params]
+

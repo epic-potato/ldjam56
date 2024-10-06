@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://ciq2b6y0hooxm"]
+[gd_scene load_steps=7 format=3 uid="uid://ciq2b6y0hooxm"]
 
-[ext_resource type="Script" path="res://frog.gd" id="1_63taw"]
+[ext_resource type="Script" path="res://scripts/frog.gd" id="1_63taw"]
 [ext_resource type="SpriteFrames" uid="uid://ck3e8ck83qgwh" path="res://sprites/frog_animations.aseprite" id="2_5ikj7"]
-[ext_resource type="Script" path="res://camera.gd" id="3_s45lq"]
+[ext_resource type="Script" path="res://scripts/camera.gd" id="3_s45lq"]
+[ext_resource type="Texture2D" uid="uid://dfsvacvelhy57" path="res://sprites/axe.aseprite" id="4_xl1rs"]
 
 [sub_resource type="Curve" id="Curve_jbly5"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.484099, 0.311859), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
@@ -12,7 +13,6 @@ point_count = 3
 radius = 16.0312
 
 [node name="frog" type="CharacterBody2D"]
-position = Vector2(221, 486)
 script = ExtResource("1_63taw")
 coyote_time = 0.1
 
@@ -24,7 +24,7 @@ default_color = Color(1, 0.584314, 1, 1)
 
 [node name="sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_5ikj7")
-animation = &"hanging_wiggle_butt"
+animation = &"blink"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ik20v")
@@ -32,8 +32,13 @@ shape = SubResource("CircleShape2D_ik20v")
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = 0
 limit_top = 0
-limit_right = 1304
+limit_right = 4000
 limit_bottom = 832
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 script = ExtResource("3_s45lq")
+
+[node name="axe" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
+texture = ExtResource("4_xl1rs")
+offset = Vector2(-18, -6)

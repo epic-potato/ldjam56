@@ -1,0 +1,16 @@
+[remap]
+
+importer="aseprite_wizard.plugin.static-texture"
+type="AtlasTexture"
+uid="uid://dfsvacvelhy57"
+path="res://.godot/imported/axe.aseprite-c99471841be96f1c1ec45255d73224d0.res"
+
+[deps]
+
+source_file="res://sprites/axe.aseprite"
+dest_files=["res://.godot/imported/axe.aseprite-c99471841be96f1c1ec45255d73224d0.res"]
+
+[params]
+
+exclude_layers_pattern=""
+only_visible_layers=false

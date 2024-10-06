@@ -3,7 +3,6 @@
 importer="aseprite_wizard.plugin.static-texture"
 type="AtlasTexture"
 uid="uid://cpthmyxhd8c8f"
-
 path="res://.godot/imported/swamp_tile_sheet_v1.aseprite-cde831b77bc385192b5d0420eb101b72.res"
 
 [deps]
@@ -15,4 +14,3 @@ dest_files=["res://.godot/imported/swamp_tile_sheet_v1.aseprite-cde831b77bc38519
 
 exclude_layers_pattern=""
 only_visible_layers=false
-

@@ -1,24 +1,25 @@
 extends Camera2D
 
 
-@export var target_dimensions: Vector2i = Vector2i(1920 / 2, 1080 /2) # we want 2x zoom on 1080p screens
+@export var target_dimensions: Vector2i = Vector2i(1920 / 2, 1080 /2)  # we want 2x zoom on 1080p screens
+
 # @onready var hud := $HUD
 # @onready var fps: Label = hud.get_node("fps_label")
 var elapsed := 0.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	# zoom = Vector2(1, 1) + Vector2(target_dimensions) / get_viewport_rect().size
+	# compute camera limits based on the tiles
+	var tilemap: TileMapLayer = get_node("/root/root/tilemap")
+
+	if tilemap != null:
+		var tile_rect = tilemap.get_used_rect()
+		limit_left = 0
+		limit_top = 0
+		limit_right = max(target_dimensions.x, (tile_rect.size.x * 16) - 8)
+		limit_bottom = max(target_dimensions.y, (tile_rect.size.y * 16)- 8)
+
 	zoom = get_viewport_rect().size / Vector2(target_dimensions)
-	print("Viewport:")
-	print(get_viewport_rect().size)
-
-	print("Target:")
-	print(target_dimensions)
-
-	print("ZOOM:")
-	print(zoom)
-	# hud.scale = zoom
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(dt: float) -> void:

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c5swpnx0pugrc"
+path="res://.godot/imported/axe_slash_and_swing.mp3-b9bc4ec2bd4079a9de55b6d79356ccf8.mp3str"
+
+[deps]
+
+source_file="res://Sounds/axe sounds/axe_slash_and_swing.mp3"
+dest_files=["res://.godot/imported/axe_slash_and_swing.mp3-b9bc4ec2bd4079a9de55b6d79356ccf8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

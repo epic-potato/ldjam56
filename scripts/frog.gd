@@ -9,6 +9,7 @@ enum State {
 	FALL,
 	TONGUE,
 	ZIP,
+	WIN,
 }
 
 enum TongueState {
@@ -19,9 +20,10 @@ enum TongueState {
 }
 
 @onready var sprite: AnimatedSprite2D = $sprite
+@onready var axe: Sprite2D = $axe
 @onready var tongue: Line2D = $Tongue
 
-@export var tongue_max_length := 360
+@export var tongue_max_length := 250
 @export var gravity := 2000 # how strong is gravity
 @export var coyote_time := 0.5 # seconds after leaving ground that jumping is possible
 
@@ -30,8 +32,11 @@ enum TongueState {
 
 @export var accel := 2000 # horizontal acceleration
 @export var air_accel := 750 # horizontal acceleration
+@export var zip_accel := 2000 # zip acceleration
 @export var ground_speed := 280 # horizontal top speed (default to 6 character widths per second)
 @export var air_speed := 32 * 32 # max speed the character can move in the air
+
+var zip_vel: float = 0
 
 var coyote_time_left := coyote_time
 var tongue_state := TongueState.READY
@@ -106,7 +111,7 @@ func handle_tongue(dt: float) -> void:
 				tongue_state = TongueState.READY
 			middle = lerp(position, end, 0.5)
 
-	tongue.set_point_position(0, position)
+	tongue.set_point_position(0, position + Vector2.DOWN * 8)
 	tongue.set_point_position(1, middle)
 	tongue.set_point_position(2, end)
 
@@ -141,9 +146,11 @@ func handle_frame(dt: float) -> void:
 		if position.distance_to(target) < 16:
 			tongue_state = TongueState.READY
 
-		velocity = (target - position).normalized() * air_speed
+		zip_vel += zip_accel * dt
+		velocity = (target - position).normalized() * min(zip_vel, air_speed)
 		return
 
+	zip_vel = 0
 	var acc = accel
 	var friction := false
 	if is_on_floor():
@@ -173,8 +180,10 @@ func handle_frame(dt: float) -> void:
 
 	if run_dir < 0:
 		sprite.flip_h = true
+		axe.scale.x = -1
 	elif run_dir > 0:
 		sprite.flip_h = false
+		axe.scale.x = 1
 
 	if friction:
 		# moving in the opposite direction should cause "more" friction
@@ -191,12 +200,15 @@ func handle_frame(dt: float) -> void:
 	else:
 		velocity.x = clampf(new_vel, -ground_speed, ground_speed)
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(dt: float) -> void:
+	if state == State.WIN:
+		return
+
 	handle_frame(dt)
 	handle_tongue(dt)
 	handle_state()
+	sprite.rotation = 0
 	match state:
 		State.TONGUE:
 			sprite.play("tongue_launch")
@@ -204,6 +216,9 @@ func _process(dt: float) -> void:
 			sprite.frame = 1
 		State.ZIP:
 			sprite.play("hanging_wiggle_butt")
+			var angle = (target - position).angle()
+			print(rad_to_deg(angle))
+			sprite.rotation = angle + (PI / 2)
 		_:
 			sprite.play("blink")
 	move_and_slide()

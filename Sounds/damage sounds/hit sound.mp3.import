@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c3tga1h2neyej"
+path="res://.godot/imported/hit sound.mp3-b903075c8d9fdee05ad68614442d317d.mp3str"
+
+[deps]
+
+source_file="res://Sounds/damage sounds/hit sound.mp3"
+dest_files=["res://.godot/imported/hit sound.mp3-b903075c8d9fdee05ad68614442d317d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
