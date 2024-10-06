@@ -3,6 +3,7 @@
 importer="aseprite_wizard.plugin.static-texture"
 type="AtlasTexture"
 uid="uid://vi2v0unrck7d"
+
 path="res://.godot/imported/mangrove_background.aseprite-db366e92b0e806e72928a366b4f38e48.res"
 
 [deps]
@@ -14,3 +15,4 @@ dest_files=["res://.godot/imported/mangrove_background.aseprite-db366e92b0e806e7
 
 exclude_layers_pattern=""
 only_visible_layers=false
+
