@@ -9,6 +9,7 @@ enum State {
 	FALL,
 	TONGUE,
 	ZIP,
+	WIN,
 }
 
 enum TongueState {
@@ -22,7 +23,7 @@ enum TongueState {
 @onready var axe: Sprite2D = $axe
 @onready var tongue: Line2D = $Tongue
 
-@export var tongue_max_length := 360
+@export var tongue_max_length := 250
 @export var gravity := 2000 # how strong is gravity
 @export var coyote_time := 0.5 # seconds after leaving ground that jumping is possible
 
@@ -199,9 +200,11 @@ func handle_frame(dt: float) -> void:
 	else:
 		velocity.x = clampf(new_vel, -ground_speed, ground_speed)
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(dt: float) -> void:
+	if state == State.WIN:
+		return
+
 	handle_frame(dt)
 	handle_tongue(dt)
 	handle_state()

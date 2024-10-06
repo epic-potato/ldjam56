@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b06vnhu1u5cwu"]
 
-[ext_resource type="Texture2D" uid="uid://ta0xvjdwxwt3" path="res://sprites/mangrove_background_swamping.aseprite" id="1_wq4co"]
+[ext_resource type="Texture2D" uid="uid://bp3dvt8h6woc6" path="res://sprites/mangrove_background_swamping_more_contrast.png" id="1_qlt5s"]
 
 [node name="bg_mangrove" type="Sprite2D"]
-texture = ExtResource("1_wq4co")
+texture = ExtResource("1_qlt5s")

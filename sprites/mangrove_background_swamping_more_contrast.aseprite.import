@@ -1,0 +1,16 @@
+[remap]
+
+importer="aseprite_wizard.plugin.static-texture"
+type="AtlasTexture"
+uid="uid://2lpndeh60nbo"
+path="res://.godot/imported/mangrove_background_swamping_more_contrast.aseprite-588685e773c7393543710d09d82c43b3.res"
+
+[deps]
+
+source_file="res://sprites/mangrove_background_swamping_more_contrast.aseprite"
+dest_files=["res://.godot/imported/mangrove_background_swamping_more_contrast.aseprite-588685e773c7393543710d09d82c43b3.res"]
+
+[params]
+
+exclude_layers_pattern=""
+only_visible_layers=false
