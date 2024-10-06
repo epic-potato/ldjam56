@@ -1,7 +1,8 @@
 extends Camera2D
 
 
-@export var target_dimensions: Vector2i = Vector2i(1920 / 2, 1080 /2) # we want 2x zoom on 1080p screens
+@export var target_dimensions: Vector2i = Vector2i(1920 / 2, 1080 /2)  # we want 2x zoom on 1080p screens
+
 # @onready var hud := $HUD
 # @onready var fps: Label = hud.get_node("fps_label")
 var elapsed := 0.0
