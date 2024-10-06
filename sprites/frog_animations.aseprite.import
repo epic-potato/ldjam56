@@ -1,8 +1,10 @@
 [remap]
 
-importer="aseprite_wizard.plugin.noop"
-type="PackedDataContainer"
-uid="uid://shfui2vltjmj"
+
+importer="aseprite_wizard.plugin"
+type="SpriteFrames"
+uid="uid://ck3e8ck83qgwh"
+
 path="res://.godot/imported/frog_animations.aseprite-ea2b4d006fdc722fe44a9e8aace68268.res"
 
 [deps]
@@ -11,4 +13,9 @@ source_file="res://sprites/frog_animations.aseprite"
 dest_files=["res://.godot/imported/frog_animations.aseprite-ea2b4d006fdc722fe44a9e8aace68268.res"]
 
 [params]
+
+split_layers=false
+exclude_layers_pattern=""
+only_visible_layers=false
+sheet_type="Packed"
 

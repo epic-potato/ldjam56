@@ -1,8 +1,9 @@
 [remap]
 
-importer="aseprite_wizard.plugin.noop"
-type="PackedDataContainer"
-uid="uid://don6pihhsl36y"
+importer="aseprite_wizard.plugin.static-texture"
+type="AtlasTexture"
+uid="uid://cpthmyxhd8c8f"
+
 path="res://.godot/imported/swamp_tile_sheet_v1.aseprite-cde831b77bc385192b5d0420eb101b72.res"
 
 [deps]
@@ -11,4 +12,7 @@ source_file="res://sprites/swamp_tile_sheet_v1.aseprite"
 dest_files=["res://.godot/imported/swamp_tile_sheet_v1.aseprite-cde831b77bc385192b5d0420eb101b72.res"]
 
 [params]
+
+exclude_layers_pattern=""
+only_visible_layers=false
 
