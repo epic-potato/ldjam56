@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=4 uid="uid://iht4uemewj7q"]
+[gd_scene load_steps=6 format=4 uid="uid://iht4uemewj7q"]
 
 [ext_resource type="PackedScene" uid="uid://b06vnhu1u5cwu" path="res://scenes/bg_mangrove.tscn" id="1_nmpdx"]
 [ext_resource type="PackedScene" uid="uid://c5osxrbagdfdx" path="res://scenes/tilemap.tscn" id="2_l6ghx"]
 [ext_resource type="PackedScene" uid="uid://2s0hm7gpoq4v" path="res://scenes/exit.tscn" id="3_0a2ky"]
 [ext_resource type="PackedScene" uid="uid://ciq2b6y0hooxm" path="res://scenes/frog.tscn" id="4_6f42p"]
+[ext_resource type="PackedScene" uid="uid://cr4qes3l3wsty" path="res://scenes/levels/lv_tut_3.tscn" id="4_8h37u"]
 
 [node name="root" type="Node2D"]
 metadata/_edit_vertical_guides_ = [960.0]
@@ -17,6 +18,7 @@ tile_map_data = PackedByteArray("AAABAAEAAwADAAAAAAABAAIAAwACAAEAAAABAAMAAwACAAE
 
 [node name="exit" parent="." instance=ExtResource("3_0a2ky")]
 position = Vector2(816, 243)
+next_level = ExtResource("4_8h37u")
 
 [node name="frog" parent="." instance=ExtResource("4_6f42p")]
 position = Vector2(109, 479)

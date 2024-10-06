@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://crlph5d8m1ef1"
+path="res://.godot/imported/retro_jump.wav-ceae8d8f5f5500b13b6982828028abac.sample"
+
+[deps]
+
+source_file="res://Sounds/frog jump sounds/retro_jump.wav"
+dest_files=["res://.godot/imported/retro_jump.wav-ceae8d8f5f5500b13b6982828028abac.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

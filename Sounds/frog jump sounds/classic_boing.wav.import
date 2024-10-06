@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dfhoejqponf3l"
+path="res://.godot/imported/classic_boing.wav-d65b8f47b51e58d72223b3520cd6dca8.sample"
+
+[deps]
+
+source_file="res://Sounds/frog jump sounds/classic_boing.wav"
+dest_files=["res://.godot/imported/classic_boing.wav-d65b8f47b51e58d72223b3520cd6dca8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

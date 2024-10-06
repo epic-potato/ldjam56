@@ -19,11 +19,7 @@ enum TongueState {
 	READY,
 }
 
-@onready var sprite: AnimatedSprite2D = $sprite
-@onready var axe: Sprite2D = $axe
-@onready var tongue: Line2D = $Tongue
-
-@export var tongue_max_length := 250
+@export var max_tongue_length := 250
 @export var gravity := 2000 # how strong is gravity
 @export var coyote_time := 0.5 # seconds after leaving ground that jumping is possible
 
@@ -36,6 +32,13 @@ enum TongueState {
 @export var ground_speed := 280 # horizontal top speed (default to 6 character widths per second)
 @export var air_speed := 32 * 32 # max speed the character can move in the air
 
+
+@onready var sprite: AnimatedSprite2D = $sprite
+@onready var axe: Sprite2D = $axe
+@onready var tongue: Line2D = $Tongue
+@onready var audio: AudioPlayer = $player
+@onready var cam: Camera2D = $Camera2D
+
 var zip_vel: float = 0
 
 var coyote_time_left := coyote_time
@@ -45,10 +48,14 @@ var state: State = State.IDLE
 
 var target_found: bool = false
 var target := Vector2.ZERO
+var anchor: Anchor = null
 var end := global_position
 var ray := RayCast2D.new()
 
-# Called when the node enters the scene tree for the first time.
+const DEATH_TIMER: float = 1
+var death_timer := DEATH_TIMER
+var dying := false
+
 func _ready() -> void:
 	ray.collide_with_areas = true
 	ray.exclude_parent = true
@@ -62,27 +69,36 @@ func find_target(target_pos: Vector2) -> void:
 	ray.target_position = target_pos - position
 	ray.collision_mask = 2
 	ray.force_raycast_update()
-	if ray.is_colliding():
-		var collider := ray.get_collider()
-		if collider is Anchor:
-			var anchor := collider as Anchor
-			anchor.hit()
-			target = anchor.global_position
-			target_found = true
+	if !ray.is_colliding():
+		return
+
+	var collider := ray.get_collider()
+	if !collider is Anchor:
+		return
+
+	if position.distance_to(collider.position) > max_tongue_length:
+		return
+
+	anchor = collider as Anchor
+	anchor.hit()
+	target = anchor.global_position
+	target_found = true
 
 
 func _input(event):
 	if event is InputEventMouseButton:
 		if event.is_released():
 			tongue_state = TongueState.RETRACT
+			if anchor != null:
+				anchor.detach()
+				anchor = null
 			target = position
 
 		if event.is_pressed() and tongue_state == TongueState.READY:
 			# target = position + (event.position - position).normalized() * tongue_max_length
 			var mouse_pos := get_local_mouse_position()
-			print(mouse_pos)
 
-			target = position + (mouse_pos.normalized() * tongue_max_length)
+			target = position + (mouse_pos.normalized() * max_tongue_length)
 			find_target(target)
 			tongue_state = TongueState.FIRE
 
@@ -138,6 +154,7 @@ func handle_state():
 func jump() -> void:
 	velocity.y = -jump_force
 	coyote_time_left = 0
+	audio.play_sound("jump")
 
 func handle_frame(dt: float) -> void:
 	var run_dir = float(Input.is_action_pressed("right")) - float(Input.is_action_pressed("left"))
@@ -200,10 +217,15 @@ func handle_frame(dt: float) -> void:
 	else:
 		velocity.x = clampf(new_vel, -ground_speed, ground_speed)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(dt: float) -> void:
 	if state == State.WIN:
 		return
+
+	if dying:
+		death_timer -= dt
+		if death_timer <= 0:
+			die()
 
 	handle_frame(dt)
 	handle_tongue(dt)
@@ -217,8 +239,17 @@ func _process(dt: float) -> void:
 		State.ZIP:
 			sprite.play("hanging_wiggle_butt")
 			var angle = (target - position).angle()
-			print(rad_to_deg(angle))
 			sprite.rotation = angle + (PI / 2)
 		_:
 			sprite.play("blink")
 	move_and_slide()
+
+	if position.y > cam.limit_bottom:
+		dying = true
+	else:
+		dying = false
+		death_timer = DEATH_TIMER
+
+
+func die() -> void:
+	SceneManager.restart_scene(get_tree().get_root())

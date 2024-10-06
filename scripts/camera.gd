@@ -10,14 +10,16 @@ var elapsed := 0.0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# compute camera limits based on the tiles
-	var tilemap: TileMapLayer = get_node("/root/root/tilemap")
+	var tilemap: TileMapLayer = get_node("/root/root/level/tilemap")
+	var tile_rect = Rect2i(0, 0, 0, 0)
 
 	if tilemap != null:
-		var tile_rect = tilemap.get_used_rect()
-		limit_left = 0
-		limit_top = 0
-		limit_right = max(target_dimensions.x, (tile_rect.size.x * 16) - 8)
-		limit_bottom = max(target_dimensions.y, (tile_rect.size.y * 16)- 8)
+		tile_rect = tilemap.get_used_rect()
+
+	limit_left = 0
+	limit_top = 0
+	limit_right = max(target_dimensions.x, (tile_rect.size.x * 16) - 8)
+	limit_bottom = max(target_dimensions.y, (tile_rect.size.y * 16)- 8)
 
 	zoom = get_viewport_rect().size / Vector2(target_dimensions)
 

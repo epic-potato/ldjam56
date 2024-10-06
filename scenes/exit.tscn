@@ -1,8 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://2s0hm7gpoq4v"]
+[gd_scene load_steps=12 format=3 uid="uid://2s0hm7gpoq4v"]
 
 [ext_resource type="Texture2D" uid="uid://cqoeh68hogs04" path="res://sprites/water_pond_sprite_v2.png" id="1_5baum"]
 [ext_resource type="Script" path="res://scripts/exit.gd" id="1_8oto7"]
 [ext_resource type="Texture2D" uid="uid://bh3mj4b3f32o0" path="res://sprites/lilypad.aseprite" id="1_nf7x8"]
+[ext_resource type="PackedScene" uid="uid://c5k23g2xcdqf" path="res://scenes/audio_player.tscn" id="4_5avh8"]
+[ext_resource type="Script" path="res://resources/named_sound.gd" id="5_knt2e"]
+[ext_resource type="AudioStream" uid="uid://d4fwi6rosx4si" path="res://Sounds/victory sounds/lily_pad_reached.wav" id="6_plbtc"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_aq8va"]
 
@@ -22,6 +25,11 @@ size = Vector2(55, 11)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fxwfy"]
 radius = 24.0
+
+[sub_resource type="Resource" id="Resource_8fqok"]
+script = ExtResource("5_knt2e")
+name = "win"
+stream = ExtResource("6_plbtc")
 
 [node name="exit" type="StaticBody2D"]
 script = ExtResource("1_8oto7")
@@ -48,5 +56,8 @@ shape = SubResource("RectangleShape2D_1bbyc")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="zone"]
 position = Vector2(0, 3)
 shape = SubResource("CircleShape2D_fxwfy")
+
+[node name="player" parent="." instance=ExtResource("4_5avh8")]
+sounds = Array[ExtResource("5_knt2e")]([SubResource("Resource_8fqok")])
 
 [connection signal="body_entered" from="zone" to="." method="_on_zone_body_entered"]
