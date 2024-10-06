@@ -1,0 +1,16 @@
+[remap]
+
+importer="aseprite_wizard.plugin.static-texture"
+type="AtlasTexture"
+uid="uid://d215e1t2fs31"
+path="res://.godot/imported/swamp_tile_sheet_CONDENSED_v2.aseprite-9b1ae879e5dcfdad800f721b7a91efd2.res"
+
+[deps]
+
+source_file="res://sprites/swamp_tile_sheet_CONDENSED_v2.aseprite"
+dest_files=["res://.godot/imported/swamp_tile_sheet_CONDENSED_v2.aseprite-9b1ae879e5dcfdad800f721b7a91efd2.res"]
+
+[params]
+
+exclude_layers_pattern=""
+only_visible_layers=false
