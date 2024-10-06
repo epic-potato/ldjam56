@@ -8,6 +8,7 @@ enum State {
 	JUMP,
 	FALL,
 	TONGUE,
+	ZIP,
 }
 
 enum TongueState {
@@ -17,9 +18,10 @@ enum TongueState {
 	READY,
 }
 
-@onready var sprite: Sprite2D = $Sprite2D
+@onready var sprite: AnimatedSprite2D = $sprite
+@onready var tongue: Line2D = $Tongue
 
-@export var tongue: Line2D
+@export var tongue_max_length := 360
 @export var gravity := 2000 # how strong is gravity
 @export var coyote_time := 0.5 # seconds after leaving ground that jumping is possible
 
@@ -28,7 +30,7 @@ enum TongueState {
 
 @export var accel := 2000 # horizontal acceleration
 @export var air_accel := 750 # horizontal acceleration
-@export var ground_speed := 320 # horizontal top speed (default to 6 character widths per second)
+@export var ground_speed := 280 # horizontal top speed (default to 6 character widths per second)
 @export var air_speed := 32 * 32 # max speed the character can move in the air
 
 var coyote_time_left := coyote_time
@@ -71,12 +73,17 @@ func _input(event):
 			target = position
 
 		if event.is_pressed() and tongue_state == TongueState.READY:
-			target = event.position
-			find_target(event.position)
+			# target = position + (event.position - position).normalized() * tongue_max_length
+			var mouse_pos := get_local_mouse_position()
+			print(mouse_pos)
+
+			target = position + (mouse_pos.normalized() * tongue_max_length)
+			find_target(target)
 			tongue_state = TongueState.FIRE
 
 
 func handle_tongue(dt: float) -> void:
+	tongue.global_position = Vector2(0, 0)
 	var middle := position
 	match tongue_state:
 		TongueState.READY:
@@ -114,6 +121,12 @@ func handle_state():
 			new_state = State.JUMP
 		else:
 			new_state = State.FALL
+
+	if tongue_state == TongueState.FIRE or tongue_state == TongueState.RETRACT:
+		new_state = State.TONGUE
+
+	if tongue_state == TongueState.ATTACHED:
+		new_state = State.ZIP
 
 	state = new_state
 
@@ -158,6 +171,11 @@ func handle_frame(dt: float) -> void:
 		velocity.x = 0
 		abs_velx = 0
 
+	if run_dir < 0:
+		sprite.flip_h = true
+	elif run_dir > 0:
+		sprite.flip_h = false
+
 	if friction:
 		# moving in the opposite direction should cause "more" friction
 		if run_dir == -sign(velocity.x):
@@ -179,4 +197,13 @@ func _process(dt: float) -> void:
 	handle_frame(dt)
 	handle_tongue(dt)
 	handle_state()
+	match state:
+		State.TONGUE:
+			sprite.play("tongue_launch")
+			sprite.speed_scale = 0
+			sprite.frame = 1
+		State.ZIP:
+			sprite.play("hanging_wiggle_butt")
+		_:
+			sprite.play("blink")
 	move_and_slide()

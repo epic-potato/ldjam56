@@ -1,6 +1,6 @@
-class_name Firefly
+class_name Mosquito
 
-extends Anchor
+extends Firefly
 
 
 # Called when the node enters the scene tree for the first time.
@@ -9,5 +9,5 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_dt: float) -> void:
+func _process(delta):
 	pass
