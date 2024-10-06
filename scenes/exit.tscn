@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://2s0hm7gpoq4v"]
+
+[ext_resource type="Texture2D" uid="uid://bh3mj4b3f32o0" path="res://sprites/lilypad.aseprite" id="1_nf7x8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bbyc"]
+size = Vector2(55, 11)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_aq8va"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_58up2"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(24, 4, 1)
+gravity = Vector3(0, -98, 0)
+scale_max = 2.0
+hue_variation_min = -2.23517e-08
+hue_variation_max = -2.23517e-08
+turbulence_enabled = true
+turbulence_noise_strength = 1.12
+
+[node name="exit" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 4.5)
+shape = SubResource("RectangleShape2D_1bbyc")
+
+[node name="sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_nf7x8")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="sprite"]
+material = SubResource("CanvasItemMaterial_aq8va")
+position = Vector2(0, -1)
+amount = 10
+process_material = SubResource("ParticleProcessMaterial_58up2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

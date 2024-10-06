@@ -1,0 +1,16 @@
+[remap]
+
+importer="aseprite_wizard.plugin.static-texture"
+type="AtlasTexture"
+uid="uid://bh3mj4b3f32o0"
+path="res://.godot/imported/lilypad.aseprite-0c4f49b658b8892e79ea0761f068d07c.res"
+
+[deps]
+
+source_file="res://sprites/lilypad.aseprite"
+dest_files=["res://.godot/imported/lilypad.aseprite-0c4f49b658b8892e79ea0761f068d07c.res"]
+
+[params]
+
+exclude_layers_pattern=""
+only_visible_layers=false
