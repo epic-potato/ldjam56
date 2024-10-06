@@ -1,5 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://2s0hm7gpoq4v"]
+[gd_scene load_steps=7 format=3 uid="uid://2s0hm7gpoq4v"]
 
+[ext_resource type="Texture2D" uid="uid://cqoeh68hogs04" path="res://sprites/water_pond_sprite_v2.png" id="1_5baum"]
+[ext_resource type="Script" path="res://scripts/exit.gd" id="1_8oto7"]
 [ext_resource type="Texture2D" uid="uid://bh3mj4b3f32o0" path="res://sprites/lilypad.aseprite" id="1_nf7x8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1bbyc"]
@@ -19,18 +21,21 @@ turbulence_enabled = true
 turbulence_noise_strength = 1.12
 
 [node name="exit" type="StaticBody2D"]
+script = ExtResource("1_8oto7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 4.5)
+position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_1bbyc")
 
-[node name="sprite" type="Sprite2D" parent="."]
+[node name="pond" type="Sprite2D" parent="."]
+position = Vector2(0, 13)
+texture = ExtResource("1_5baum")
+
+[node name="lily" type="Sprite2D" parent="."]
 texture = ExtResource("1_nf7x8")
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="sprite"]
+[node name="GPUParticles2D" type="GPUParticles2D" parent="lily"]
 material = SubResource("CanvasItemMaterial_aq8va")
 position = Vector2(0, -1)
 amount = 10
 process_material = SubResource("ParticleProcessMaterial_58up2")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]

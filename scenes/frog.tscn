@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://ciq2b6y0hooxm"]
 
-[ext_resource type="Script" path="res://frog.gd" id="1_63taw"]
+[ext_resource type="Script" path="res://scripts/frog.gd" id="1_63taw"]
 [ext_resource type="SpriteFrames" uid="uid://ck3e8ck83qgwh" path="res://sprites/frog_animations.aseprite" id="2_5ikj7"]
-[ext_resource type="Script" path="res://camera.gd" id="3_s45lq"]
+[ext_resource type="Script" path="res://scripts/camera.gd" id="3_s45lq"]
 [ext_resource type="Texture2D" uid="uid://dfsvacvelhy57" path="res://sprites/axe.aseprite" id="4_xl1rs"]
 
 [sub_resource type="Curve" id="Curve_jbly5"]

@@ -1,0 +1,16 @@
+[remap]
+
+importer="aseprite_wizard.plugin.static-texture"
+type="AtlasTexture"
+uid="uid://dq6gv033bg3i8"
+path="res://.godot/imported/water_pond_sprite_v2.aseprite-03873027e66af84ef4efd708a249614b.res"
+
+[deps]
+
+source_file="res://sprites/water_pond_sprite_v2.aseprite"
+dest_files=["res://.godot/imported/water_pond_sprite_v2.aseprite-03873027e66af84ef4efd708a249614b.res"]
+
+[params]
+
+exclude_layers_pattern=""
+only_visible_layers=false
