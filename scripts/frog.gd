@@ -20,6 +20,8 @@ enum TongueState {
 	READY,
 }
 
+signal health_changed(health: int)
+
 @export var max_health := 3
 @export var max_tongue_length := 250
 @export var gravity := 2000 # how strong is gravity
@@ -344,6 +346,7 @@ func hurt(normal: Vector2) -> void:
 	inv_time = max_inv_time
 	audio.play_sound("hit")
 	health -= 1
+	health_changed.emit(health)
 	if tongue_state == TongueState.ATTACHED:
 		tongue_state = TongueState.RETRACT
 

@@ -1,29 +1,43 @@
-[gd_scene load_steps=5 format=3 uid="uid://cj48av86fs0hp"]
+[gd_scene load_steps=10 format=3 uid="uid://cj48av86fs0hp"]
 
-[ext_resource type="Script" path="res://scripts/play_button.gd" id="1_lqbwq"]
+[ext_resource type="Script" path="res://scenes/levels/title.gd" id="1_r63y0"]
+[ext_resource type="Texture2D" uid="uid://dd7ibw6xs83yb" path="res://sprites/start_screen_no_outline.png" id="2_0rjqu"]
+[ext_resource type="PackedScene" uid="uid://c5k23g2xcdqf" path="res://scenes/audio_player.tscn" id="2_dqqto"]
 [ext_resource type="PackedScene" uid="uid://c70j4vsevie28" path="res://scenes/levels/lv_tut_1.tscn" id="2_traqh"]
-[ext_resource type="FontFile" uid="uid://cfb4hed6euj21" path="res://fonts/upheavtt.ttf" id="2_v0xw7"]
+[ext_resource type="Script" path="res://resources/named_sound.gd" id="3_m3jjc"]
+[ext_resource type="Texture2D" uid="uid://eayvrmki3n40" path="res://sprites/start_screen_with_outline.png" id="3_s86d1"]
+[ext_resource type="AudioStream" uid="uid://bj4wup6t20vib" path="res://Sounds/damage sounds/splat_death.wav" id="4_18ilw"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_mqgco"]
-font = ExtResource("2_v0xw7")
-font_size = 64
-font_color = Color(0, 0, 0, 1)
+[sub_resource type="Resource" id="Resource_n6dud"]
+script = ExtResource("3_m3jjc")
+name = "hover"
+stream = ExtResource("4_18ilw")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ksngv"]
+size = Vector2(229, 234)
 
 [node name="root" type="Node2D"]
-
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = 756.0
-offset_top = 385.0
-offset_right = 1120.0
-offset_bottom = 563.0
-script = ExtResource("1_lqbwq")
+script = ExtResource("1_r63y0")
 play_scene = ExtResource("2_traqh")
 
-[node name="Label" type="Label" parent="ColorRect"]
-layout_mode = 0
-offset_left = 104.0
-offset_top = 56.0
-offset_right = 261.0
-offset_bottom = 114.0
-text = "PLAY"
-label_settings = SubResource("LabelSettings_mqgco")
+[node name="player" parent="." instance=ExtResource("2_dqqto")]
+sounds = Array[ExtResource("3_m3jjc")]([SubResource("Resource_n6dud")])
+
+[node name="no_outline" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("2_0rjqu")
+
+[node name="outline" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(960, 540)
+texture = ExtResource("3_s86d1")
+
+[node name="button" type="Area2D" parent="."]
+position = Vector2(951, 807)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="button"]
+position = Vector2(5.5, 10)
+shape = SubResource("RectangleShape2D_ksngv")
+
+[connection signal="mouse_entered" from="button" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="button" to="." method="_on_button_mouse_exited"]
