@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://b06vnhu1u5cwu" path="res://scenes/bg_mangrove.tscn" id="1_r3vgd"]
 [ext_resource type="PackedScene" uid="uid://c5osxrbagdfdx" path="res://scenes/tilemap.tscn" id="2_croq2"]
 [ext_resource type="PackedScene" uid="uid://2s0hm7gpoq4v" path="res://scenes/exit.tscn" id="3_q85wk"]
-[ext_resource type="PackedScene" uid="uid://cr4qes3l3wsty" path="res://scenes/levels/lv_tut_3.tscn" id="4_n6xv1"]
+[ext_resource type="PackedScene" uid="uid://d1widogk7sici" path="res://scenes/levels/lv_breaha_3.tscn" id="4_c1cby"]
 [ext_resource type="PackedScene" uid="uid://ciq2b6y0hooxm" path="res://scenes/frog.tscn" id="5_bnsmr"]
 [ext_resource type="PackedScene" uid="uid://qvu2ewtcxc4u" path="res://scenes/firefly.tscn" id="6_k2wkf"]
 [ext_resource type="PackedScene" uid="uid://dxhygxhehdeol" path="res://scenes/mosquito.tscn" id="7_yquly"]
@@ -18,21 +18,10 @@ tile_map_data = PackedByteArray("AAA7AAAAAwAEAAAAAAA6AAAAAwABAAIAAAA5AAAAAwABAAI
 
 [node name="exit" parent="." instance=ExtResource("3_q85wk")]
 position = Vector2(559, 143)
-next_level = ExtResource("4_n6xv1")
+next_level = ExtResource("4_c1cby")
 
 [node name="frog" parent="." instance=ExtResource("5_bnsmr")]
 position = Vector2(42, 507)
-max_health = 3
-max_tongue_length = 250
-gravity = 2000
-jump_force = 575
-variable_jump_div = 2
-accel = 2000
-air_accel = 750
-zip_accel = 2000
-ground_speed = 280
-air_speed = 1024
-swing_cooldown = 0.5
 
 [node name="firefly" parent="." instance=ExtResource("6_k2wkf")]
 position = Vector2(222, 363)
