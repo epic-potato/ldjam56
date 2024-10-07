@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://laa0llcgvtok"]
+
+[ext_resource type="Script" path="res://scripts/stinger.gd" id="1_3xyei"]
+[ext_resource type="SpriteFrames" uid="uid://bebiq54g00ql6" path="res://sprites/stinger.aseprite" id="2_y8c5v"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vr3eg"]
+radius = 12.0
+
+[node name="stinger" type="Area2D"]
+collision_mask = 513
+script = ExtResource("1_3xyei")
+
+[node name="sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_y8c5v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_vr3eg")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
