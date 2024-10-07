@@ -137,6 +137,7 @@ func _input(event):
 				target = position + (mouse_pos.normalized() * max_tongue_length)
 				find_target(target)
 				tongue_state = TongueState.FIRE
+				audio.play_sound("tongue")
 
 			if event.is_action("swing"):
 				swing(mouse_pos)
