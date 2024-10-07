@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://iht4uemewj7q" path="res://scenes/levels/lv_tut_2.tscn" id="4_m0ck1"]
 [ext_resource type="PackedScene" uid="uid://2s0hm7gpoq4v" path="res://scenes/exit.tscn" id="6_btjwx"]
 [ext_resource type="PackedScene" uid="uid://dxhygxhehdeol" path="res://scenes/mosquito.tscn" id="8_lhgeh"]
-[ext_resource type="Texture2D" uid="uid://ise5wxeoyyms" path="res://sprites/health_hearts.aseprite" id="9_rk2qs"]
+[ext_resource type="PackedScene" uid="uid://kkgtvwfi6fee" path="res://scenes/hud.tscn" id="9_tpafi"]
 
 [node name="root" type="Node2D"]
 metadata/_edit_vertical_guides_ = [960.0]
@@ -108,19 +108,4 @@ position = Vector2(163, 461)
 [node name="mosquito" parent="." instance=ExtResource("8_lhgeh")]
 position = Vector2(564, 243)
 
-[node name="HUD" type="CanvasLayer" parent="."]
-follow_viewport_enabled = true
-
-[node name="hearts" type="Node2D" parent="HUD"]
-position = Vector2(31, 518)
-
-[node name="heart" type="Sprite2D" parent="HUD/hearts"]
-texture = ExtResource("9_rk2qs")
-
-[node name="heart1" type="Sprite2D" parent="HUD/hearts"]
-position = Vector2(17, 0)
-texture = ExtResource("9_rk2qs")
-
-[node name="heart2" type="Sprite2D" parent="HUD/hearts"]
-position = Vector2(34, 0)
-texture = ExtResource("9_rk2qs")
+[node name="HUD" parent="." instance=ExtResource("9_tpafi")]
