@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://0oesdaiobwo"]
+[gd_scene load_steps=9 format=4 uid="uid://0oesdaiobwo"]
 
 [ext_resource type="PackedScene" uid="uid://b06vnhu1u5cwu" path="res://scenes/bg_mangrove.tscn" id="1_s3mhg"]
 [ext_resource type="PackedScene" uid="uid://c5osxrbagdfdx" path="res://scenes/tilemap.tscn" id="2_1wkw2"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://7w6weh1bwr8o" path="res://scenes/levels/lvl_joe_3.tscn" id="4_pwn1c"]
 [ext_resource type="PackedScene" uid="uid://dxhygxhehdeol" path="res://scenes/mosquito.tscn" id="5_iyo28"]
 [ext_resource type="PackedScene" uid="uid://2s0hm7gpoq4v" path="res://scenes/exit.tscn" id="6_nyy1e"]
+[ext_resource type="PackedScene" uid="uid://cel8hhcttqc5h" path="res://scenes/hud.tscn" id="8_eyvqb"]
 
 [node name="Node2D" type="Node2D"]
 metadata/_edit_vertical_guides_ = [958.0]
@@ -42,3 +43,7 @@ position = Vector2(77, 107)
 
 [node name="firefly4" parent="." instance=ExtResource("4_pg1f3")]
 position = Vector2(754, 467)
+
+[node name="HUD" parent="." instance=ExtResource("8_eyvqb")]
+
+[connection signal="health_changed" from="frog" to="HUD" method="_on_frog_health_changed"]

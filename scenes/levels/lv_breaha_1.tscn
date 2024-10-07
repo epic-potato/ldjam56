@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://b4uk8nmqc64wr"]
+[gd_scene load_steps=9 format=4 uid="uid://b4uk8nmqc64wr"]
 
 [ext_resource type="PackedScene" uid="uid://b06vnhu1u5cwu" path="res://scenes/bg_mangrove.tscn" id="1_5rm7l"]
 [ext_resource type="PackedScene" uid="uid://c5osxrbagdfdx" path="res://scenes/tilemap.tscn" id="2_ityci"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://qvu2ewtcxc4u" path="res://scenes/firefly.tscn" id="6_sb5ye"]
 [ext_resource type="PackedScene" uid="uid://c4f7qjhaswrnc" path="res://scenes/briar.tscn" id="7_vtiwn"]
 [ext_resource type="PackedScene" uid="uid://dxhygxhehdeol" path="res://scenes/mosquito.tscn" id="7_ysugp"]
+[ext_resource type="PackedScene" uid="uid://cel8hhcttqc5h" path="res://scenes/hud.tscn" id="8_7o7pv"]
 
 [node name="root" type="Node2D"]
 
@@ -276,3 +277,7 @@ position = Vector2(808, 392)
 
 [node name="briar5" parent="briar_group12" instance=ExtResource("7_vtiwn")]
 position = Vector2(-16, 0)
+
+[node name="HUD" parent="." instance=ExtResource("8_7o7pv")]
+
+[connection signal="health_changed" from="frog" to="HUD" method="_on_frog_health_changed"]

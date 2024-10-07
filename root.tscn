@@ -9,5 +9,6 @@ metadata/_edit_vertical_guides_ = [1304.0]
 
 [node name="background_music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("1_hui7m")
+autoplay = true
 
 [node name="level" parent="." instance=ExtResource("2_rnub1")]
