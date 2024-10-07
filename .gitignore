@@ -2,4 +2,6 @@
 .godot/
 /android/
 web/
+windows/
+build/
 web.zip
