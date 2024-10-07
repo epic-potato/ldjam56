@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://beke7llad0mct"
+path="res://.godot/imported/tutorial_signs_v3.aseprite-25e61b813e5916e608cb5ba3a7acf3d3.res"
+
+[deps]
+
+source_file="res://sprites/tutorial_signs_v3.aseprite"
+dest_files=["res://.godot/imported/tutorial_signs_v3.aseprite-25e61b813e5916e608cb5ba3a7acf3d3.res"]
+
+[params]
+
