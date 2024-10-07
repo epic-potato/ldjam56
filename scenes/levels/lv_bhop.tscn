@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://bonwstbasi8hg"]
+[gd_scene load_steps=10 format=4 uid="uid://bonwstbasi8hg"]
 
 [ext_resource type="PackedScene" uid="uid://b06vnhu1u5cwu" path="res://scenes/bg_mangrove.tscn" id="1_r7b5y"]
 [ext_resource type="PackedScene" uid="uid://c5osxrbagdfdx" path="res://scenes/tilemap.tscn" id="2_wnlt8"]
@@ -7,6 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://ciq2b6y0hooxm" path="res://scenes/frog.tscn" id="4_jxads"]
 [ext_resource type="PackedScene" uid="uid://qvu2ewtcxc4u" path="res://scenes/firefly.tscn" id="5_tqj2n"]
 [ext_resource type="PackedScene" uid="uid://cel8hhcttqc5h" path="res://scenes/hud.tscn" id="7_gcaqh"]
+[ext_resource type="SpriteFrames" uid="uid://cb4ljvabg3bxa" path="res://sprites/wasp.aseprite" id="8_xb1n8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wak3p"]
+radius = 29.0
 
 [node name="root" type="Node2D"]
 
@@ -33,5 +37,15 @@ position = Vector2(900, 292)
 position = Vector2(663, 140)
 
 [node name="HUD" parent="." instance=ExtResource("7_gcaqh")]
+
+[node name="wasp" type="Area2D" parent="."]
+position = Vector2(491, 304)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="wasp"]
+sprite_frames = ExtResource("8_xb1n8")
+animation = &"Attack"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wasp"]
+shape = SubResource("CircleShape2D_wak3p")
 
 [connection signal="health_changed" from="frog" to="HUD" method="_on_frog_health_changed"]
