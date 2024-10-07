@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://c002w0mdw3do3"
+path="res://.godot/imported/briars_tileset.aseprite-616d28352fff5fde7d1df6a3e2bdcc95.res"
+
+[deps]
+
+source_file="res://sprites/briars_tileset.aseprite"
+dest_files=["res://.godot/imported/briars_tileset.aseprite-616d28352fff5fde7d1df6a3e2bdcc95.res"]
+
+[params]
+
