@@ -27,7 +27,6 @@ position = Vector2(38, 28)
 position = Vector2(757, 440)
 
 [node name="firefly2" parent="." instance=ExtResource("6_sb5ye")]
-visible = false
 position = Vector2(47, 121)
 
 [node name="firefly3" parent="." instance=ExtResource("6_sb5ye")]
@@ -62,6 +61,3 @@ position = Vector2(693, 249)
 
 [node name="mosquito2" parent="." instance=ExtResource("7_ysugp")]
 position = Vector2(868, 77)
-
-[node name="firefly10" parent="." instance=ExtResource("6_sb5ye")]
-position = Vector2(43, 110)
