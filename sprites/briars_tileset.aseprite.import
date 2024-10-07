@@ -1,7 +1,7 @@
 [remap]
 
-importer="aseprite_wizard.plugin.noop"
-type="PackedDataContainer"
+importer="aseprite_wizard.plugin.static-texture"
+type="AtlasTexture"
 uid="uid://c002w0mdw3do3"
 path="res://.godot/imported/briars_tileset.aseprite-616d28352fff5fde7d1df6a3e2bdcc95.res"
 
@@ -12,3 +12,5 @@ dest_files=["res://.godot/imported/briars_tileset.aseprite-616d28352fff5fde7d1df
 
 [params]
 
+exclude_layers_pattern=""
+only_visible_layers=false
