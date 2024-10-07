@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://qvu2ewtcxc4u" path="res://scenes/firefly.tscn" id="4_fu4ad"]
 [ext_resource type="PackedScene" uid="uid://dxhygxhehdeol" path="res://scenes/mosquito.tscn" id="5_fednp"]
 [ext_resource type="PackedScene" uid="uid://2s0hm7gpoq4v" path="res://scenes/exit.tscn" id="6_x0a8m"]
-[ext_resource type="PackedScene" path="res://scenes/hud.tscn" id="8_ixdmd"]
-[ext_resource type="PackedScene" path="res://scenes/briar.tscn" id="8_r48p1"]
+[ext_resource type="PackedScene" uid="uid://cel8hhcttqc5h" path="res://scenes/hud.tscn" id="8_ixdmd"]
+[ext_resource type="PackedScene" uid="uid://c4f7qjhaswrnc" path="res://scenes/briar.tscn" id="8_r48p1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nmkkw"]
 size = Vector2(821, 26)

@@ -57,8 +57,7 @@ default_color = Color(1, 0.584314, 1, 1)
 
 [node name="sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_e81d4")
-animation = &"ball_roll_tuck"
-frame_progress = 0.0539986
+animation = &"blink"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ik20v")
