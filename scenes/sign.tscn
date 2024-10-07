@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://byruvh0q6m5gt"]
+
+[ext_resource type="SpriteFrames" uid="uid://bp554bnyl1b3e" path="res://sprites/tutorial_signs.aseprite" id="1_s38v6"]
+
+[node name="sign" type="AnimatedSprite2D"]
+position = Vector2(291, 452)
+sprite_frames = ExtResource("1_s38v6")

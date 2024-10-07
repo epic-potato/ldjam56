@@ -1,20 +1,44 @@
-[gd_scene load_steps=7 format=3 uid="uid://ciq2b6y0hooxm"]
+[gd_scene load_steps=13 format=3 uid="uid://ciq2b6y0hooxm"]
 
 [ext_resource type="Script" path="res://scripts/frog.gd" id="1_63taw"]
 [ext_resource type="SpriteFrames" uid="uid://ck3e8ck83qgwh" path="res://sprites/frog_animations.aseprite" id="2_5ikj7"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="3_s45lq"]
 [ext_resource type="Texture2D" uid="uid://dfsvacvelhy57" path="res://sprites/axe.aseprite" id="4_xl1rs"]
+[ext_resource type="PackedScene" uid="uid://c5k23g2xcdqf" path="res://scenes/audio_player.tscn" id="5_nsytm"]
+[ext_resource type="Script" path="res://resources/named_sound.gd" id="6_jok0i"]
+[ext_resource type="AudioStream" uid="uid://crlph5d8m1ef1" path="res://Sounds/frog jump sounds/retro_jump.wav" id="7_ruaie"]
+[ext_resource type="AudioStream" uid="uid://toyrwjsyjxsl" path="res://Sounds/damage sounds/hit.wav" id="8_4khep"]
 
 [sub_resource type="Curve" id="Curve_jbly5"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.484099, 0.311859), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ik20v"]
-radius = 16.0312
+radius = 13.0384
+
+[sub_resource type="Resource" id="Resource_jegl1"]
+script = ExtResource("6_jok0i")
+name = "jump"
+stream = ExtResource("7_ruaie")
+
+[sub_resource type="Resource" id="Resource_olxns"]
+script = ExtResource("6_jok0i")
+name = "hit"
+stream = ExtResource("8_4khep")
 
 [node name="frog" type="CharacterBody2D"]
+collision_mask = 5
 script = ExtResource("1_63taw")
+max_tongue_length = null
+gravity = null
 coyote_time = 0.1
+jump_force = null
+variable_jump_div = null
+accel = null
+air_accel = null
+zip_accel = null
+ground_speed = null
+air_speed = null
 
 [node name="Tongue" type="Line2D" parent="."]
 position = Vector2(-221, -486)
@@ -27,6 +51,7 @@ sprite_frames = ExtResource("2_5ikj7")
 animation = &"blink"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
 shape = SubResource("CircleShape2D_ik20v")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -42,3 +67,6 @@ script = ExtResource("3_s45lq")
 position = Vector2(0, -1)
 texture = ExtResource("4_xl1rs")
 offset = Vector2(-18, -6)
+
+[node name="player" parent="." instance=ExtResource("5_nsytm")]
+sounds = Array[ExtResource("6_jok0i")]([SubResource("Resource_jegl1"), SubResource("Resource_olxns")])

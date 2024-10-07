@@ -7,11 +7,10 @@
 radius = 34.0147
 
 [node name="mosquito" type="Area2D"]
-position = Vector2(566, 421)
 collision_layer = 3
 script = ExtResource("1_pfst1")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_nfe6w")
 autoplay = "default"
 
