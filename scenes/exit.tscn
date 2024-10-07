@@ -21,7 +21,7 @@ turbulence_enabled = true
 turbulence_noise_strength = 1.12
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1bbyc"]
-size = Vector2(55, 11)
+size = Vector2(84, 11)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fxwfy"]
 radius = 24.0

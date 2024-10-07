@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=4 uid="uid://c70j4vsevie28"]
+[gd_scene load_steps=9 format=4 uid="uid://c70j4vsevie28"]
 
 [ext_resource type="PackedScene" uid="uid://b06vnhu1u5cwu" path="res://scenes/bg_mangrove.tscn" id="1_gb16g"]
 [ext_resource type="SpriteFrames" uid="uid://cumdftycpqovk" path="res://sprites/mushroom.aseprite" id="2_enkii"]
+[ext_resource type="PackedScene" uid="uid://byruvh0q6m5gt" path="res://scenes/sign.tscn" id="2_m1xbh"]
 [ext_resource type="PackedScene" uid="uid://c5osxrbagdfdx" path="res://scenes/tilemap.tscn" id="2_p7eom"]
 [ext_resource type="PackedScene" uid="uid://ciq2b6y0hooxm" path="res://scenes/frog.tscn" id="3_0fg77"]
 [ext_resource type="PackedScene" uid="uid://iht4uemewj7q" path="res://scenes/levels/lv_tut_2.tscn" id="4_m0ck1"]
 [ext_resource type="PackedScene" uid="uid://2s0hm7gpoq4v" path="res://scenes/exit.tscn" id="6_btjwx"]
-[ext_resource type="SpriteFrames" uid="uid://cb4ljvabg3bxa" path="res://sprites/wasp.aseprite" id="7_bjd2v"]
+[ext_resource type="PackedScene" uid="uid://dxhygxhehdeol" path="res://scenes/mosquito.tscn" id="8_lhgeh"]
 
 [node name="root" type="Node2D"]
 metadata/_edit_vertical_guides_ = [960.0]
@@ -15,20 +16,23 @@ metadata/_edit_horizontal_guides_ = [540.0]
 [node name="bg_mangrove" parent="." instance=ExtResource("1_gb16g")]
 position = Vector2(480, 270)
 
+[node name="sign" parent="." instance=ExtResource("2_m1xbh")]
+position = Vector2(522, 275)
+
 [node name="mush_group" type="Node2D" parent="."]
-position = Vector2(480, 270)
+position = Vector2(339, 477)
 
 [node name="mushroom3" type="AnimatedSprite2D" parent="mush_group"]
-position = Vector2(-239, 203)
+position = Vector2(6, -4)
 sprite_frames = ExtResource("2_enkii")
 frame = 1
 
 [node name="mushroom2" type="AnimatedSprite2D" parent="mush_group"]
-position = Vector2(-243, 207)
+position = Vector2(2, 0)
 sprite_frames = ExtResource("2_enkii")
 
 [node name="mushroom" type="AnimatedSprite2D" parent="mush_group"]
-position = Vector2(-253, 204)
+position = Vector2(-8, -3)
 sprite_frames = ExtResource("2_enkii")
 
 [node name="mush_group2" type="Node2D" parent="."]
@@ -100,8 +104,5 @@ next_level = ExtResource("4_m0ck1")
 [node name="frog" parent="." instance=ExtResource("3_0fg77")]
 position = Vector2(163, 461)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(343, 362)
-sprite_frames = ExtResource("7_bjd2v")
-animation = &"Attack"
-autoplay = "Attack"
+[node name="mosquito" parent="." instance=ExtResource("8_lhgeh")]
+position = Vector2(564, 243)
