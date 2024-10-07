@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://dr8usti2np66q"
+path="res://.godot/imported/axe_blade_swing_animation.aseprite-da725acd865f2cbe783f7b5317c98cbf.res"
+
+[deps]
+
+source_file="res://sprites/axe_blade_swing_animation.aseprite"
+dest_files=["res://.godot/imported/axe_blade_swing_animation.aseprite-da725acd865f2cbe783f7b5317c98cbf.res"]
+
+[params]
+
