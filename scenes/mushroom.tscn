@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dug4oq8q0koom"]
+
+[ext_resource type="SpriteFrames" uid="uid://cumdftycpqovk" path="res://sprites/mushroom.aseprite" id="1_g6j0l"]
+[ext_resource type="Script" path="res://scripts/mushroom.gd" id="2_6i5jd"]
+
+[node name="mushroom4" type="AnimatedSprite2D"]
+z_index = -1
+sprite_frames = ExtResource("1_g6j0l")
+script = ExtResource("2_6i5jd")
