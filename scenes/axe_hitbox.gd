@@ -2,7 +2,7 @@ class_name AxeHitbox
 
 extends Area2D
 
-@export var active_frames := 5
+@export var active_frames := 7
 var active_time: float = 0
 
 

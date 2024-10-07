@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://dfu61se7y7ka7"]
+[gd_scene load_steps=8 format=4 uid="uid://b4uk8nmqc64wr"]
 
 [ext_resource type="PackedScene" uid="uid://b06vnhu1u5cwu" path="res://scenes/bg_mangrove.tscn" id="1_5rm7l"]
 [ext_resource type="PackedScene" uid="uid://c5osxrbagdfdx" path="res://scenes/tilemap.tscn" id="2_ityci"]

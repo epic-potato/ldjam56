@@ -3,6 +3,10 @@ class_name Mosquito
 extends Firefly
 
 
+var axe: AxeHitbox
+var in_range := false
+
+
 func _ready():
 	pass
 
@@ -12,6 +16,10 @@ func _process(dt: float):
 		timer -= dt
 		if timer <= 0:
 			enable()
+		return
+
+	if in_range and axe != null and axe.is_active():
+		disable() 
 		return
 
 	flutter(dt)
@@ -34,7 +42,15 @@ func _on_zone_area_entered(area: Area2D):
 	if !area is AxeHitbox:
 		return
 	
-	print("HIT MOSQUITO!")
-	var axe := area as AxeHitbox
+	in_range = true
+	axe = area as AxeHitbox
 	if axe.is_active():
 		disable()
+
+
+func _on_zone_area_exited(area:Area2D):
+	if !area is AxeHitbox:
+		return
+
+	in_range = false
+

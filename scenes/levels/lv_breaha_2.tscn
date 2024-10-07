@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://dlujt4gdpf7dr"]
+[gd_scene load_steps=8 format=4 uid="uid://cejrf7krjigyw"]
 
 [ext_resource type="PackedScene" uid="uid://b06vnhu1u5cwu" path="res://scenes/bg_mangrove.tscn" id="1_r3vgd"]
 [ext_resource type="PackedScene" uid="uid://c5osxrbagdfdx" path="res://scenes/tilemap.tscn" id="2_croq2"]
@@ -43,7 +43,7 @@ position = Vector2(503, 460)
 position = Vector2(677, 280)
 
 [node name="firefly7" parent="." instance=ExtResource("6_k2wkf")]
-position = Vector2(841, 411)
+position = Vector2(792, 386)
 
 [node name="firefly8" parent="." instance=ExtResource("6_k2wkf")]
 position = Vector2(902, 181)

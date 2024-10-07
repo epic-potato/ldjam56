@@ -27,4 +27,5 @@ collision_mask = 5
 shape = SubResource("CircleShape2D_fxgo2")
 
 [connection signal="area_entered" from="zone" to="." method="_on_zone_area_entered"]
+[connection signal="area_exited" from="zone" to="." method="_on_zone_area_exited"]
 [connection signal="body_entered" from="zone" to="." method="_on_zone_body_entered"]
