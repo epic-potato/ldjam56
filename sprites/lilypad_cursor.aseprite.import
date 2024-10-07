@@ -1,7 +1,7 @@
 [remap]
 
-importer="aseprite_wizard.plugin.noop"
-type="PackedDataContainer"
+importer="aseprite_wizard.plugin.static-texture"
+type="AtlasTexture"
 uid="uid://de21sb5kioacu"
 path="res://.godot/imported/lilypad_cursor.aseprite-2de4b6ec4f8679eb2a385563481e418a.res"
 
@@ -12,3 +12,5 @@ dest_files=["res://.godot/imported/lilypad_cursor.aseprite-2de4b6ec4f8679eb2a385
 
 [params]
 
+exclude_layers_pattern=""
+only_visible_layers=false
