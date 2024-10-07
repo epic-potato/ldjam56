@@ -3,6 +3,9 @@ class_name SceneManager
 static var current_scene: PackedScene
 
 static func transition_to(root: Node, scene: PackedScene) -> void:
+	if scene == null:
+		return
+
 	current_scene = scene
 
 	var real_root = root.get_node("root")

@@ -1,20 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4f7qjhaswrnc"]
+[gd_scene load_steps=2 format=3 uid="uid://c4f7qjhaswrnc"]
 
-[ext_resource type="Texture2D" uid="uid://cpombgtn8smgj" path="res://sprites/briar.png" id="1_1hvjp"]
 [ext_resource type="Script" path="res://scripts/briar.gd" id="1_ltb4f"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2hxnx"]
-size = Vector2(16, 16)
 
 [node name="briar" type="Area2D"]
 collision_layer = 4
 script = ExtResource("1_ltb4f")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_2hxnx")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_1hvjp")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
