@@ -27,6 +27,7 @@ name = "hit"
 stream = ExtResource("8_4khep")
 
 [node name="frog" type="CharacterBody2D"]
+collision_mask = 5
 script = ExtResource("1_63taw")
 max_tongue_length = null
 gravity = null

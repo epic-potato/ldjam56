@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://custsvll7kwwj"]
+[gd_scene load_steps=6 format=4 uid="uid://custsvll7kwwj"]
 
 [ext_resource type="PackedScene" uid="uid://b06vnhu1u5cwu" path="res://scenes/bg_mangrove.tscn" id="1_piep3"]
 [ext_resource type="PackedScene" uid="uid://c5osxrbagdfdx" path="res://scenes/tilemap.tscn" id="2_rbhif"]
 [ext_resource type="PackedScene" uid="uid://ciq2b6y0hooxm" path="res://scenes/frog.tscn" id="3_q7mec"]
 [ext_resource type="PackedScene" uid="uid://qvu2ewtcxc4u" path="res://scenes/firefly.tscn" id="4_1nh7p"]
 [ext_resource type="PackedScene" uid="uid://2s0hm7gpoq4v" path="res://scenes/exit.tscn" id="5_g45h1"]
-[ext_resource type="PackedScene" uid="uid://cj48av86fs0hp" path="res://scenes/levels/title.tscn" id="6_72tnp"]
 
 [node name="root" type="Node2D"]
 
@@ -29,4 +28,3 @@ position = Vector2(577, 111)
 
 [node name="exit" parent="." instance=ExtResource("5_g45h1")]
 position = Vector2(848, 147)
-next_level = ExtResource("6_72tnp")

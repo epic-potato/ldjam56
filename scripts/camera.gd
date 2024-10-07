@@ -10,7 +10,7 @@ var elapsed := 0.0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# compute camera limits based on the tiles
-	var tilemap: TileMapLayer = get_node("/root/root/level/tilemap")
+	var tilemap: TileMapLayer = get_node_or_null("/root/root/level/tilemap")
 	var tile_rect = Rect2i(0, 0, 0, 0)
 
 	if tilemap != null:

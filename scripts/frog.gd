@@ -67,20 +67,23 @@ func _ready() -> void:
 
 func find_target(target_pos: Vector2) -> void:
 	ray.target_position = target_pos - position
-	ray.collision_mask = 2
+	ray.collision_mask = 3
 	ray.force_raycast_update()
 	if !ray.is_colliding():
 		return
 
 	var collider := ray.get_collider()
 	if !collider is Anchor:
+		target = ray.get_collision_point()
 		return
 
 	if position.distance_to(collider.position) > max_tongue_length:
 		return
 
+	if !(collider as Anchor).hit():
+		return
+
 	anchor = collider as Anchor
-	anchor.hit()
 	target = anchor.global_position
 	target_found = true
 

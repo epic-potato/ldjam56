@@ -99,15 +99,6 @@ next_level = ExtResource("4_m0ck1")
 
 [node name="frog" parent="." instance=ExtResource("3_0fg77")]
 position = Vector2(163, 461)
-max_tongue_length = null
-gravity = null
-jump_force = null
-variable_jump_div = null
-accel = null
-air_accel = null
-zip_accel = null
-ground_speed = null
-air_speed = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(343, 362)

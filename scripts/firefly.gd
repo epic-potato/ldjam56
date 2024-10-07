@@ -3,15 +3,17 @@ class_name Firefly
 extends Anchor
 
 @export var respawn_timer: float = 3
-@onready var sprite := $Sprite2D
+
+@onready var sprite := $sprite
 
 var timer: float = respawn_timer
 var dead: bool = false
+var float_pos: Vector2 = Vector2.ZERO
 
 
 func disable() -> void:
 	sprite.hide()
-	collision_layer = 1
+	collision_layer = 4
 	dead = true
 
 
@@ -29,17 +31,27 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(dt: float) -> void:
-	if !dead:
+	if dead:
+		timer -= dt
+		if timer <= 0:
+			enable()
 		return
 
-	timer -= dt
-	if timer <= 0:
-		enable()
+	
+	if sprite.position.distance_to(float_pos) > 0.1:
+		sprite.position = lerp(sprite.position, float_pos, dt * 3)
+	else:
+		print("new float_pos")
+		float_pos = Vector2(randf() * 16 - 8, randf() * 16 - 8)
 
 
 func _on_hitbox_body_entered(body:Node2D):
 	if body is Frog:
 		disable()
+
+
+func hit() -> bool:
+	return !dead
 
 
 func detach():

@@ -21,15 +21,6 @@ next_level = ExtResource("4_ayxrm")
 
 [node name="frog" parent="." instance=ExtResource("3_g5ram")]
 position = Vector2(154, 440)
-max_tongue_length = null
-gravity = null
-jump_force = null
-variable_jump_div = null
-accel = null
-air_accel = null
-zip_accel = null
-ground_speed = null
-air_speed = null
 
 [node name="firefly" parent="." instance=ExtResource("5_8a5m7")]
 position = Vector2(321, 331)

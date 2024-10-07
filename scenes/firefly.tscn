@@ -17,12 +17,13 @@ script = ExtResource("1_qssp1")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ru5wb")
 
-[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+[node name="sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_mu122")
 autoplay = "default"
 frame_progress = 0.503736
 
 [node name="hitbox" type="Area2D" parent="."]
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
 shape = SubResource("CircleShape2D_qqsos")

@@ -20,6 +20,7 @@ script = ExtResource("1_lqbwq")
 play_scene = ExtResource("2_traqh")
 
 [node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
 offset_left = 104.0
 offset_top = 56.0
 offset_right = 261.0
