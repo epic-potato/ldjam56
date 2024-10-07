@@ -1,7 +1,7 @@
 [remap]
 
-importer="aseprite_wizard.plugin.noop"
-type="PackedDataContainer"
+importer="aseprite_wizard.plugin"
+type="SpriteFrames"
 uid="uid://b63sy7cr646p"
 path="res://.godot/imported/bug_death_smoke_poof.aseprite-996253d456c9610365ca3dad0e1a4bc4.res"
 
@@ -12,3 +12,7 @@ dest_files=["res://.godot/imported/bug_death_smoke_poof.aseprite-996253d456c9610
 
 [params]
 
+split_layers=false
+exclude_layers_pattern=""
+only_visible_layers=true
+sheet_type="Packed"

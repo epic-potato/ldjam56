@@ -49,7 +49,7 @@ func shoot() -> void:
 	cooldown = shot_cooldown
 
 func handle_shoot():
-	los.target_position = frog.position - position
+	los.target_position = (frog.position + Vector2.UP * 4) - position
 	if !los.is_colliding():
 		return
 
