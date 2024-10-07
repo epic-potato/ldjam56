@@ -1,7 +1,7 @@
 [remap]
 
-importer="aseprite_wizard.plugin.noop"
-type="PackedDataContainer"
+importer="aseprite_wizard.plugin"
+type="SpriteFrames"
 uid="uid://dt1rad8ar6snf"
 path="res://.godot/imported/frog_animations_v2.aseprite-be762587a42de64aff50ecfd1301f871.res"
 
@@ -12,3 +12,7 @@ dest_files=["res://.godot/imported/frog_animations_v2.aseprite-be762587a42de64af
 
 [params]
 
+split_layers=false
+exclude_layers_pattern=""
+only_visible_layers=false
+sheet_type="Packed"

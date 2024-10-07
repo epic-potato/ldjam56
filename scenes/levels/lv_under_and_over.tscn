@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://custsvll7kwwj"]
+[gd_scene load_steps=8 format=4 uid="uid://custsvll7kwwj"]
 
 [ext_resource type="PackedScene" uid="uid://b06vnhu1u5cwu" path="res://scenes/bg_mangrove.tscn" id="1_piep3"]
 [ext_resource type="PackedScene" uid="uid://c5osxrbagdfdx" path="res://scenes/tilemap.tscn" id="2_rbhif"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://qvu2ewtcxc4u" path="res://scenes/firefly.tscn" id="4_1nh7p"]
 [ext_resource type="PackedScene" uid="uid://bonwstbasi8hg" path="res://scenes/levels/lv_bhop.tscn" id="4_euqjf"]
 [ext_resource type="PackedScene" uid="uid://2s0hm7gpoq4v" path="res://scenes/exit.tscn" id="5_g45h1"]
+[ext_resource type="PackedScene" uid="uid://cel8hhcttqc5h" path="res://scenes/hud.tscn" id="7_3r0vx"]
 
 [node name="root" type="Node2D"]
 
@@ -30,3 +31,7 @@ position = Vector2(559, 278)
 
 [node name="firefly3" parent="." instance=ExtResource("4_1nh7p")]
 position = Vector2(577, 111)
+
+[node name="HUD" parent="." instance=ExtResource("7_3r0vx")]
+
+[connection signal="health_changed" from="frog" to="HUD" method="_on_frog_health_changed"]

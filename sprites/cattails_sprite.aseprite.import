@@ -1,7 +1,7 @@
 [remap]
 
-importer="aseprite_wizard.plugin.noop"
-type="PackedDataContainer"
+importer="aseprite_wizard.plugin"
+type="SpriteFrames"
 uid="uid://bcu32p0cfg1dp"
 path="res://.godot/imported/cattails_sprite.aseprite-6839cb317c2a07c582ce716c2ff1e485.res"
 
@@ -12,3 +12,7 @@ dest_files=["res://.godot/imported/cattails_sprite.aseprite-6839cb317c2a07c582ce
 
 [params]
 
+split_layers=false
+exclude_layers_pattern=""
+only_visible_layers=false
+sheet_type="Packed"

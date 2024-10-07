@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://eayvrmki3n40"
-path="res://.godot/imported/start_screen_with_outline.png-a7a1c6e1d475a8a3666cae90ec9e96f1.ctex"
+uid="uid://ctifde3kycb46"
+path="res://.godot/imported/health_hearts.png-bcb160096cd0edadf38753ad870bed7c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/start_screen_with_outline.png"
-dest_files=["res://.godot/imported/start_screen_with_outline.png-a7a1c6e1d475a8a3666cae90ec9e96f1.ctex"]
+source_file="res://sprites/health_hearts.png"
+dest_files=["res://.godot/imported/health_hearts.png-bcb160096cd0edadf38753ad870bed7c.ctex"]
 
 [params]
 

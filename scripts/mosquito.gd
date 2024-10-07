@@ -2,8 +2,6 @@ class_name Mosquito
 
 extends Firefly
 
-@onready var audio: AudioPlayer = $player
-
 var axe: AxeHitbox
 var in_range := false
 
@@ -54,8 +52,3 @@ func _on_zone_area_exited(area:Area2D):
 		return
 
 	in_range = false
-
-
-func die() -> void:
-	disable()
-	audio.play_sound("hit")

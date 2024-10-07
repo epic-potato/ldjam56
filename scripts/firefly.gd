@@ -2,9 +2,10 @@ class_name Firefly
 
 extends Anchor
 
-@export var respawn_timer: float = 3
+@export var respawn_timer: float = 1.5
 
 @onready var sprite := $sprite
+@onready var audio := $player
 
 var timer: float = respawn_timer
 var dead: bool = false
@@ -48,12 +49,17 @@ func _process(dt: float) -> void:
 
 func _on_hitbox_body_entered(body:Node2D):
 	if body is Frog:
-		disable()
+		die()
 
 
 func hit() -> bool:
 	return !dead
 
 
+func die() -> void:
+	if !dead:
+		disable()
+		audio.play_sound("die")
+
 func detach():
-	disable()
+	die()

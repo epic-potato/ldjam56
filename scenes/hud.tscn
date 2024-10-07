@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cel8hhcttqc5h"]
+
+[ext_resource type="Script" path="res://scripts/hud.gd" id="1_a6vm1"]
+[ext_resource type="SpriteFrames" uid="uid://blywjargiodwb" path="res://sprites/health_hearts_v2.aseprite" id="2_jar4f"]
+
+[node name="HUD" type="CanvasLayer"]
+follow_viewport_enabled = true
+script = ExtResource("1_a6vm1")
+heart_frames = ExtResource("2_jar4f")
+
+[node name="hearts" type="Node2D" parent="."]
+position = Vector2(38, 517)

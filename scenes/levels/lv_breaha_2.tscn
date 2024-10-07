@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://cejrf7krjigyw"]
+[gd_scene load_steps=9 format=4 uid="uid://cejrf7krjigyw"]
 
 [ext_resource type="PackedScene" uid="uid://b06vnhu1u5cwu" path="res://scenes/bg_mangrove.tscn" id="1_r3vgd"]
 [ext_resource type="PackedScene" uid="uid://c5osxrbagdfdx" path="res://scenes/tilemap.tscn" id="2_croq2"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ciq2b6y0hooxm" path="res://scenes/frog.tscn" id="5_bnsmr"]
 [ext_resource type="PackedScene" uid="uid://qvu2ewtcxc4u" path="res://scenes/firefly.tscn" id="6_k2wkf"]
 [ext_resource type="PackedScene" uid="uid://dxhygxhehdeol" path="res://scenes/mosquito.tscn" id="7_yquly"]
+[ext_resource type="PackedScene" uid="uid://cel8hhcttqc5h" path="res://scenes/hud.tscn" id="8_88sid"]
 
 [node name="root" type="Node2D"]
 
@@ -61,3 +62,7 @@ position = Vector2(593, 368)
 
 [node name="mosquito2" parent="." instance=ExtResource("7_yquly")]
 position = Vector2(809, 52)
+
+[node name="HUD" parent="." instance=ExtResource("8_88sid")]
+
+[connection signal="health_changed" from="frog" to="HUD" method="_on_frog_health_changed"]
