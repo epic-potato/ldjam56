@@ -16,6 +16,7 @@ tile_map_data = PackedByteArray("AAA7AAEAAwABAAEAAAA7AAAAAwABAAEAAAA6AAEAAwAEAAA
 
 [node name="frog" parent="." instance=ExtResource("3_q7mec")]
 position = Vector2(69, 94)
+max_health = null
 
 [node name="firefly" parent="." instance=ExtResource("4_1nh7p")]
 position = Vector2(396, 355)

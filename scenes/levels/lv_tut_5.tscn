@@ -22,3 +22,4 @@ position = Vector2(443, 166)
 
 [node name="frog" parent="." instance=ExtResource("5_cxtbb")]
 position = Vector2(444, 392)
+max_health = null

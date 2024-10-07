@@ -26,6 +26,7 @@ next_level = ExtResource("4_ayxrm")
 
 [node name="frog" parent="." instance=ExtResource("3_g5ram")]
 position = Vector2(154, 440)
+swing_cooldown = null
 
 [node name="firefly" parent="." instance=ExtResource("5_8a5m7")]
 position = Vector2(321, 331)

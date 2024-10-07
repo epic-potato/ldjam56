@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ciq2b6y0hooxm"]
+[gd_scene load_steps=15 format=3 uid="uid://ciq2b6y0hooxm"]
 
 [ext_resource type="Script" path="res://scripts/frog.gd" id="1_63taw"]
 [ext_resource type="SpriteFrames" uid="uid://ck3e8ck83qgwh" path="res://sprites/frog_animations.aseprite" id="2_5ikj7"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://resources/named_sound.gd" id="6_jok0i"]
 [ext_resource type="AudioStream" uid="uid://crlph5d8m1ef1" path="res://Sounds/frog jump sounds/retro_jump.wav" id="7_ruaie"]
 [ext_resource type="AudioStream" uid="uid://toyrwjsyjxsl" path="res://Sounds/damage sounds/hit.wav" id="8_4khep"]
+[ext_resource type="Script" path="res://scenes/axe_hitbox.gd" id="9_gxkvs"]
 
 [sub_resource type="Curve" id="Curve_jbly5"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.484099, 0.311859), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
@@ -26,9 +27,14 @@ script = ExtResource("6_jok0i")
 name = "hit"
 stream = ExtResource("8_4khep")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_7ikta"]
+radius = 56.0089
+
 [node name="frog" type="CharacterBody2D"]
 collision_mask = 5
+slide_on_ceiling = false
 script = ExtResource("1_63taw")
+max_health = null
 max_tongue_length = null
 gravity = null
 coyote_time = 0.1
@@ -39,6 +45,7 @@ air_accel = null
 zip_accel = null
 ground_speed = null
 air_speed = null
+swing_cooldown = null
 
 [node name="Tongue" type="Line2D" parent="."]
 position = Vector2(-221, -486)
@@ -64,9 +71,16 @@ drag_vertical_enabled = true
 script = ExtResource("3_s45lq")
 
 [node name="axe" type="Sprite2D" parent="."]
-position = Vector2(0, -1)
 texture = ExtResource("4_xl1rs")
 offset = Vector2(-18, -6)
 
 [node name="player" parent="." instance=ExtResource("5_nsytm")]
 sounds = Array[ExtResource("6_jok0i")]([SubResource("Resource_jegl1"), SubResource("Resource_olxns")])
+
+[node name="hitbox" type="Area2D" parent="."]
+position = Vector2(0, 3)
+collision_layer = 4
+script = ExtResource("9_gxkvs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+shape = SubResource("CircleShape2D_7ikta")
