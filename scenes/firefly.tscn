@@ -1,13 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://qvu2ewtcxc4u"]
+[gd_scene load_steps=9 format=3 uid="uid://qvu2ewtcxc4u"]
 
 [ext_resource type="Script" path="res://scripts/firefly.gd" id="1_qssp1"]
 [ext_resource type="SpriteFrames" uid="uid://b3o15vbsmmeun" path="res://sprites/fireflies.aseprite" id="2_mu122"]
+[ext_resource type="PackedScene" uid="uid://c5k23g2xcdqf" path="res://scenes/audio_player.tscn" id="3_7mda2"]
+[ext_resource type="Script" path="res://resources/named_sound.gd" id="4_djwd6"]
+[ext_resource type="AudioStream" uid="uid://cxldjgupuyvi8" path="res://Sounds/eat.wav" id="5_t87r1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ru5wb"]
 radius = 37.0135
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qqsos"]
 radius = 12.0
+
+[sub_resource type="Resource" id="Resource_pq5wf"]
+script = ExtResource("4_djwd6")
+name = "die"
+stream = ExtResource("5_t87r1")
 
 [node name="firefly" type="Area2D"]
 collision_layer = 3
@@ -27,5 +35,8 @@ collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
 shape = SubResource("CircleShape2D_qqsos")
+
+[node name="player" parent="." instance=ExtResource("3_7mda2")]
+sounds = Array[ExtResource("4_djwd6")]([SubResource("Resource_pq5wf")])
 
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]

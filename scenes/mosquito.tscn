@@ -11,7 +11,7 @@ radius = 34.0147
 
 [sub_resource type="Resource" id="Resource_kaftg"]
 script = ExtResource("4_oagoy")
-name = "hit"
+name = "die"
 stream = ExtResource("5_olqe1")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fxgo2"]
