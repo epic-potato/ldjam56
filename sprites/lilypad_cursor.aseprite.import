@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://de21sb5kioacu"
+path="res://.godot/imported/lilypad_cursor.aseprite-2de4b6ec4f8679eb2a385563481e418a.res"
+
+[deps]
+
+source_file="res://sprites/lilypad_cursor.aseprite"
+dest_files=["res://.godot/imported/lilypad_cursor.aseprite-2de4b6ec4f8679eb2a385563481e418a.res"]
+
+[params]
+
