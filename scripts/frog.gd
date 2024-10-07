@@ -334,9 +334,12 @@ func _process(dt: float) -> void:
 		death_timer = DEATH_TIMER
 
 
+func restart() -> void:
+	SceneManager.restart_scene(get_tree().get_root())
+
 func die() -> void:
 	state = State.DEAD
-	SceneManager.restart_scene(get_tree().get_root())
+	call_deferred("restart")
 
 
 func hurt(normal: Vector2) -> void:
@@ -351,7 +354,6 @@ func hurt(normal: Vector2) -> void:
 	if tongue_state == TongueState.ATTACHED:
 		tongue_state = TongueState.RETRACT
 
-	print("HURT: ", health)
 	if health <= 0:
 		die()
 		return
