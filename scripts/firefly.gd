@@ -2,7 +2,7 @@ class_name Firefly
 
 extends Anchor
 
-@export var respawn_timer: float = 3
+@export var respawn_timer: float = 1.5
 
 @onready var sprite := $sprite
 
