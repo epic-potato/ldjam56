@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://ciq2b6y0hooxm"]
 
 [ext_resource type="Script" path="res://scripts/frog.gd" id="1_63taw"]
-[ext_resource type="SpriteFrames" uid="uid://ck3e8ck83qgwh" path="res://sprites/frog_animations.aseprite" id="2_5ikj7"]
+[ext_resource type="SpriteFrames" uid="uid://dt1rad8ar6snf" path="res://sprites/frog_animations_v2.aseprite" id="2_e81d4"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="3_s45lq"]
 [ext_resource type="Texture2D" uid="uid://dfsvacvelhy57" path="res://sprites/axe.aseprite" id="4_xl1rs"]
 [ext_resource type="PackedScene" uid="uid://c5k23g2xcdqf" path="res://scenes/audio_player.tscn" id="5_nsytm"]
@@ -49,11 +49,11 @@ width_curve = SubResource("Curve_jbly5")
 default_color = Color(1, 0.584314, 1, 1)
 
 [node name="sprite" type="AnimatedSprite2D" parent="."]
-sprite_frames = ExtResource("2_5ikj7")
-animation = &"blink"
+sprite_frames = ExtResource("2_e81d4")
+animation = &"ball_roll_tuck"
+frame_progress = 0.0539986
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 3)
 shape = SubResource("CircleShape2D_ik20v")
 
 [node name="Camera2D" type="Camera2D" parent="."]

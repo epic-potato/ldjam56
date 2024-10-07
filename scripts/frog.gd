@@ -10,6 +10,7 @@ enum State {
 	TONGUE,
 	ZIP,
 	WIN,
+	DEAD,
 }
 
 enum TongueState {
@@ -33,6 +34,7 @@ enum TongueState {
 @export var ground_speed := 280 # horizontal top speed (default to 6 character widths per second)
 @export var air_speed := 32 * 32 # max speed the character can move in the air
 @export var swing_cooldown := 0.5 # time in seconds to wait between swings
+@export var max_inv_time := 0.5 
 
 
 @onready var sprite: AnimatedSprite2D = $sprite
@@ -63,6 +65,7 @@ var can_swing := true
 var swinging := false
 var swing_angle: float = 0
 var swing_timer: float = 0
+var inv_time: float = 0
 
 func _ready() -> void:
 	ray.collide_with_areas = true
@@ -111,6 +114,11 @@ func swing(mouse_pos: Vector2) -> void:
 
 
 func _input(event):
+	if event is InputEventKey:
+		# emergency restart
+		if event.is_action_pressed("restart"):
+			SceneManager.restart_scene(get_tree().get_root())
+
 	if event is InputEventMouseButton:
 		if event.is_released():
 			tongue_state = TongueState.RETRACT
@@ -121,7 +129,6 @@ func _input(event):
 
 		if event.is_pressed():
 			var mouse_pos := get_local_mouse_position()
-			
 			if event.is_action("tongue") and tongue_state == TongueState.READY:
 				# target = position + (event.position - position).normalized() * tongue_max_length
 
@@ -255,6 +262,11 @@ func handle_frame(dt: float) -> void:
 		sprite.flip_h = false
 		axe.scale.x = 1
 
+	if state == State.TONGUE and target.x < position.x:
+		sprite.flip_h = true
+	if state == State.TONGUE and target.x > position.x:
+		sprite.flip_h = false
+	
 	if friction:
 		# moving in the opposite direction should cause "more" friction
 		if run_dir == -sign(velocity.x):
@@ -272,7 +284,11 @@ func handle_frame(dt: float) -> void:
 
 
 func _process(dt: float) -> void:
+	if state == State.DEAD:
+		return
+
 	if state == State.WIN:
+		sprite.play("ribbit")
 		return
 
 	if dying:
@@ -280,12 +296,22 @@ func _process(dt: float) -> void:
 		if death_timer <= 0:
 			die()
 
+	if inv_time > 0:
+		inv_time -= dt
+
 	handle_frame(dt)
 	handle_tongue(dt)
 	handle_swing(dt)
 	handle_state()
 	sprite.rotation = 0
+	sprite.speed_scale = 1
 	match state:
+		State.IDLE, State.WIN:
+			sprite.play("ribbit")
+		State.RUN:
+			sprite.play("frog_hop")
+		State.JUMP, State.FALL:
+			sprite.play("ball_roll_tuck")
 		State.TONGUE:
 			sprite.play("tongue_launch")
 			sprite.speed_scale = 0
@@ -306,22 +332,30 @@ func _process(dt: float) -> void:
 
 
 func die() -> void:
+	state = State.DEAD
 	SceneManager.restart_scene(get_tree().get_root())
 
 
 func hurt(normal: Vector2) -> void:
+	# don't take damage while invincible
+	if inv_time > 0:
+		return
+
+	inv_time = max_inv_time
 	audio.play_sound("hit")
 	health -= 1
 	if tongue_state == TongueState.ATTACHED:
 		tongue_state = TongueState.RETRACT
 
+	print("HURT: ", health)
 	if health <= 0:
 		die()
 		return
 
-	if normal.x >= 0:
-		velocity = Vector2(-1, -1) * 300
-	else:
-		velocity = Vector2(1, -1) * 300
+	velocity = normal * 300
+	# if normal.x >= 0:
+	# 	velocity = Vector2(-1, -1) * 300
+	# else:
+	# 	velocity = Vector2(1, -1) * 300
 
 

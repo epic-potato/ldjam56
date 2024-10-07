@@ -1,0 +1,16 @@
+[remap]
+
+importer="aseprite_wizard.plugin.static-texture"
+type="AtlasTexture"
+uid="uid://di1qm8avqtrc3"
+path="res://.godot/imported/briar.aseprite-d88974f7506e00258abde750778f7967.res"
+
+[deps]
+
+source_file="res://sprites/briar.aseprite"
+dest_files=["res://.godot/imported/briar.aseprite-d88974f7506e00258abde750778f7967.res"]
+
+[params]
+
+exclude_layers_pattern=""
+only_visible_layers=false
