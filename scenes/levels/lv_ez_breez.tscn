@@ -23,6 +23,7 @@ next_level = ExtResource("4_k22rd")
 
 [node name="frog" parent="." instance=ExtResource("4_yxkhg")]
 position = Vector2(83, 492)
+max_health = null
 
 [node name="firefly" parent="." instance=ExtResource("5_eqdqh")]
 position = Vector2(614, 426)

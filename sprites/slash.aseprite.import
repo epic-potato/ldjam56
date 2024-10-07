@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://bxn0nfg2p7yxl"
+path="res://.godot/imported/slash.aseprite-982e29215f98666182d8f313f80184b3.res"
+
+[deps]
+
+source_file="res://sprites/slash.aseprite"
+dest_files=["res://.godot/imported/slash.aseprite-982e29215f98666182d8f313f80184b3.res"]
+
+[params]
+

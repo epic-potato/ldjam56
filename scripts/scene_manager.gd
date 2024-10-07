@@ -6,7 +6,7 @@ static func transition_to(root: Node, scene: PackedScene) -> void:
 	current_scene = scene
 
 	var real_root = root.get_node("root")
-	var level := real_root.get_node("level")
+	var level := real_root.get_node_or_null("level")
 	if level == null:
 		# this happens when testing a level without starting at the menu
 		root.get_tree().change_scene_to_packed(scene)

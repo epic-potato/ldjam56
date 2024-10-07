@@ -23,6 +23,7 @@ window/size/resizable=false
 window/stretch/mode="viewport"
 window/stretch/scale_mode="integer"
 window/vsync/vsync_mode=0
+mouse_cursor/custom_image="res://sprites/lilypad_cursor.png"
 
 [dotnet]
 
@@ -53,6 +54,11 @@ jump={
 tongue={
 "deadzone": 0.5,
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(113, 23),"global_position":Vector2(122, 69),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
+]
+}
+swing={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":2,"position":Vector2(244, 31),"global_position":Vector2(258, 101),"factor":1.0,"button_index":2,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
 }
 
