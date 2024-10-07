@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://d24t0wi74313x"]
+
+[ext_resource type="SpriteFrames" uid="uid://bcu32p0cfg1dp" path="res://sprites/cattails_sprite.aseprite" id="1_5b42v"]
+
+[node name="cattail" type="AnimatedSprite2D"]
+z_index = -1
+position = Vector2(557, 289)
+sprite_frames = ExtResource("1_5b42v")
