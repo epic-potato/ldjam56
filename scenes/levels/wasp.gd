@@ -1,6 +1,11 @@
 class_name Wasp
 
-extends Anchor
+extends Area2D
+
+enum State {
+	IDLE,
+	FIRE,
+}
 
 @export var frog_node: Node2D
 @export var shot_cooldown: float = 2
@@ -11,14 +16,32 @@ extends Anchor
 @onready var los: RayCast2D = $los
 
 var frog: Frog
-var can_shoot := true
-var cooldown: float = 0
+var can_shoot := false
+var cooldown: float = shot_cooldown * 1.5
+var state := State.IDLE
+
 
 func _ready():
 	if frog_node is Frog:
 		frog = frog_node as Frog
 	else:
 		print("OH NOES")
+
+
+func handle_state() -> void:
+	match state:
+		State.IDLE:
+			sprite.play("idle")
+		State.FIRE:
+			sprite.play("attack")
+
+func shoot() -> void:
+	var stinger := stinger_scn.instantiate() as Stinger
+	los.add_child(stinger)
+
+	stinger.set_velocity(los.target_position.normalized() * stinger_speed)
+	can_shoot = false
+	cooldown = shot_cooldown
 
 func handle_shoot():
 	los.target_position = frog.position - position
@@ -30,14 +53,15 @@ func handle_shoot():
 		return
 
 	if can_shoot:
-		print("SHOOT!")
-		var stinger := stinger_scn.instantiate() as Stinger
-		add_child(stinger)
-		stinger.set_velocity(los.target_position.normalized() * stinger_speed)
-		can_shoot = false
-		cooldown = shot_cooldown
+		state = State.FIRE
+		sprite.play("attack")
 
-func _process(dt: float) -> void:
+	if State.FIRE and sprite.frame >= 3 and can_shoot:
+		shoot()
+
+
+func _physics_process(dt: float) -> void:
+
 	if !can_shoot:
 		cooldown -= dt
 		if cooldown <= 0:
@@ -48,5 +72,19 @@ func _process(dt: float) -> void:
 	else:
 		sprite.flip_h = false
 
-func _physics_process(_dt: float) -> void:
 	handle_shoot()
+	handle_state()
+
+
+func _on_sprite_animation_finished():
+	print("ANIM DONE")
+	if state == State.FIRE:
+		state = State.IDLE
+		sprite.play("idle")
+
+func _on_sprite_animation_looped():
+	print("ANIM DONE")
+	if state == State.FIRE:
+		state = State.IDLE
+		sprite.play("idle")
+

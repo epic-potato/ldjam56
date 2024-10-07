@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://covu4crc3iqld"]
+[gd_scene load_steps=10 format=4 uid="uid://covu4crc3iqld"]
 
 [ext_resource type="PackedScene" uid="uid://b06vnhu1u5cwu" path="res://scenes/bg_mangrove.tscn" id="1_qxt5w"]
 [ext_resource type="PackedScene" uid="uid://c5osxrbagdfdx" path="res://scenes/tilemap.tscn" id="2_ifu70"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://qvu2ewtcxc4u" path="res://scenes/firefly.tscn" id="4_eotsk"]
 [ext_resource type="PackedScene" uid="uid://2s0hm7gpoq4v" path="res://scenes/exit.tscn" id="6_v8n1c"]
 [ext_resource type="PackedScene" uid="uid://cel8hhcttqc5h" path="res://scenes/hud.tscn" id="8_jdqdo"]
+[ext_resource type="PackedScene" uid="uid://bcxy7xyt0seqs" path="res://scenes/wasp.tscn" id="9_ox42y"]
 
 [node name="root" type="Node2D"]
 metadata/_edit_vertical_guides_ = [960.0]
@@ -47,5 +48,9 @@ position = Vector2(495, 401)
 position = Vector2(312, 456)
 
 [node name="HUD" parent="." instance=ExtResource("8_jdqdo")]
+
+[node name="wasp" parent="." node_paths=PackedStringArray("frog_node") instance=ExtResource("9_ox42y")]
+position = Vector2(448, 111)
+frog_node = NodePath("../frog")
 
 [connection signal="health_changed" from="frog" to="HUD" method="_on_frog_health_changed"]
