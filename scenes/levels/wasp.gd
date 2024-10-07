@@ -14,11 +14,16 @@ enum State {
 
 @onready var sprite: AnimatedSprite2D = $sprite
 @onready var los: RayCast2D = $los
+@onready var audio: AudioPlayer = $player
 
 var frog: Frog
 var can_shoot := false
 var cooldown: float = shot_cooldown * 1.5
 var state := State.IDLE
+
+var axe: AxeHitbox
+var in_range := false
+var dead := false
 
 
 func _ready():
@@ -61,6 +66,12 @@ func handle_shoot():
 
 
 func _physics_process(dt: float) -> void:
+	if dead:
+		return
+
+	if in_range and axe != null and axe.is_active():
+		die() 
+		return
 
 	if !can_shoot:
 		cooldown -= dt
@@ -76,15 +87,33 @@ func _physics_process(dt: float) -> void:
 	handle_state()
 
 
-func _on_sprite_animation_finished():
-	print("ANIM DONE")
+func _on_sprite_animation_looped():
 	if state == State.FIRE:
 		state = State.IDLE
 		sprite.play("idle")
 
-func _on_sprite_animation_looped():
-	print("ANIM DONE")
-	if state == State.FIRE:
-		state = State.IDLE
-		sprite.play("idle")
+func die():
+	sprite.hide()
+	collision_layer = 4
+	dead = true
+	audio.play_sound("die")
+
+func _on_area_exited(area: Area2D):
+	if !area is AxeHitbox:
+		return
+
+	in_range = false
+
+func _on_area_entered(area: Area2D):
+	if area is AxeHitbox:
+		in_range = true
+		axe = area as AxeHitbox
+		if axe.is_active():
+			die()
+
+func _on_body_entered(body: Node2D):
+	if body is Frog:
+		var f: Frog = body as Frog
+		f.hurt((position - f.position).normalized())
+
 

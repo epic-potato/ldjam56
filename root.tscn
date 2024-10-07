@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://0arp7pjdjypv"]
+[gd_scene load_steps=4 format=3 uid="uid://0arp7pjdjypv"]
 
 [ext_resource type="AudioStream" uid="uid://bl8f636rimv7c" path="res://Sounds/swamp_axe.wav" id="1_hui7m"]
+[ext_resource type="Script" path="res://escape.gd" id="1_y3kkq"]
 [ext_resource type="PackedScene" uid="uid://cj48av86fs0hp" path="res://scenes/levels/title.tscn" id="2_rnub1"]
 
 [node name="root" type="Node2D"]
+script = ExtResource("1_y3kkq")
 metadata/_edit_horizontal_guides_ = [832.0]
 metadata/_edit_vertical_guides_ = [1304.0]
 

@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://c5osxrbagdfdx" path="res://scenes/tilemap.tscn" id="2_ifu70"]
 [ext_resource type="PackedScene" uid="uid://ciq2b6y0hooxm" path="res://scenes/frog.tscn" id="3_kqj8q"]
 [ext_resource type="PackedScene" uid="uid://dxhygxhehdeol" path="res://scenes/mosquito.tscn" id="4_0w3uf"]
-[ext_resource type="PackedScene" uid="uid://0oesdaiobwo" path="res://scenes/levels/lv_joe_2.tscn" id="4_cktt7"]
 [ext_resource type="PackedScene" uid="uid://qvu2ewtcxc4u" path="res://scenes/firefly.tscn" id="4_eotsk"]
+[ext_resource type="PackedScene" uid="uid://custsvll7kwwj" path="res://scenes/levels/lv_4_under_and_over.tscn" id="4_p62bu"]
 [ext_resource type="PackedScene" uid="uid://2s0hm7gpoq4v" path="res://scenes/exit.tscn" id="6_v8n1c"]
 [ext_resource type="PackedScene" uid="uid://cel8hhcttqc5h" path="res://scenes/hud.tscn" id="8_jdqdo"]
 [ext_resource type="PackedScene" uid="uid://bcxy7xyt0seqs" path="res://scenes/wasp.tscn" id="9_ox42y"]
@@ -21,7 +21,7 @@ tile_map_data = PackedByteArray("AAA7ACEAAwABAAIAAAA7ACAAAwABAAEAAAA7AB8AAwABAAE
 
 [node name="exit" parent="." instance=ExtResource("6_v8n1c")]
 position = Vector2(231, 482)
-next_level = ExtResource("4_cktt7")
+next_level = ExtResource("4_p62bu")
 
 [node name="frog" parent="." instance=ExtResource("3_kqj8q")]
 position = Vector2(95, 464)

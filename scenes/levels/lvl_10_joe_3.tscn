@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://b06vnhu1u5cwu" path="res://scenes/bg_mangrove.tscn" id="1_7gowh"]
 [ext_resource type="PackedScene" uid="uid://c5osxrbagdfdx" path="res://scenes/tilemap.tscn" id="2_vw5u6"]
 [ext_resource type="PackedScene" uid="uid://ciq2b6y0hooxm" path="res://scenes/frog.tscn" id="3_fkltw"]
-[ext_resource type="PackedScene" uid="uid://cejrf7krjigyw" path="res://scenes/levels/lv_breaha_2.tscn" id="4_eeins"]
 [ext_resource type="PackedScene" uid="uid://qvu2ewtcxc4u" path="res://scenes/firefly.tscn" id="4_fu4ad"]
+[ext_resource type="PackedScene" uid="uid://08f1yqskadp7" path="res://scenes/levels/lv_end.tscn" id="4_o83s4"]
 [ext_resource type="PackedScene" uid="uid://dxhygxhehdeol" path="res://scenes/mosquito.tscn" id="5_fednp"]
 [ext_resource type="PackedScene" uid="uid://2s0hm7gpoq4v" path="res://scenes/exit.tscn" id="6_x0a8m"]
 [ext_resource type="PackedScene" uid="uid://cel8hhcttqc5h" path="res://scenes/hud.tscn" id="8_ixdmd"]
@@ -39,7 +39,7 @@ size = Vector2(314, 28)
 
 [node name="Node2D" type="Node2D"]
 metadata/_edit_vertical_guides_ = [962.0]
-metadata/_edit_horizontal_guides_ = [560.0]
+metadata/_edit_horizontal_guides_ = [551.0]
 
 [node name="bg_mangrove" parent="." instance=ExtResource("1_7gowh")]
 position = Vector2(481, 280)
@@ -49,7 +49,7 @@ tile_map_data = PackedByteArray("AAA7ACEAAwABAAEAAAA7ACAAAwABAAEAAAA7AB8AAwABAAE
 
 [node name="exit" parent="." instance=ExtResource("6_x0a8m")]
 position = Vector2(880, 98)
-next_level = ExtResource("4_eeins")
+next_level = ExtResource("4_o83s4")
 
 [node name="frog" parent="." instance=ExtResource("3_fkltw")]
 position = Vector2(59, 495)

@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://b06vnhu1u5cwu" path="res://scenes/bg_mangrove.tscn" id="1_7i12t"]
 [ext_resource type="PackedScene" uid="uid://c5osxrbagdfdx" path="res://scenes/tilemap.tscn" id="2_nbplr"]
 [ext_resource type="PackedScene" uid="uid://2s0hm7gpoq4v" path="res://scenes/exit.tscn" id="3_php3e"]
-[ext_resource type="PackedScene" uid="uid://custsvll7kwwj" path="res://scenes/levels/lv_under_and_over.tscn" id="4_k22rd"]
+[ext_resource type="PackedScene" uid="uid://d1widogk7sici" path="res://scenes/levels/lv_2_breaha_3.tscn" id="4_600ph"]
 [ext_resource type="PackedScene" uid="uid://ciq2b6y0hooxm" path="res://scenes/frog.tscn" id="4_yxkhg"]
 [ext_resource type="PackedScene" uid="uid://qvu2ewtcxc4u" path="res://scenes/firefly.tscn" id="5_eqdqh"]
 [ext_resource type="PackedScene" uid="uid://cel8hhcttqc5h" path="res://scenes/hud.tscn" id="7_f1otg"]
@@ -20,7 +20,7 @@ tile_map_data = PackedByteArray("AAA7ACEAAwABAAEAAAA7ACAAAwAEAAEAAAA6ACEAAwABAAE
 
 [node name="exit" parent="." instance=ExtResource("3_php3e")]
 position = Vector2(96, 164)
-next_level = ExtResource("4_k22rd")
+next_level = ExtResource("4_600ph")
 
 [node name="frog" parent="." instance=ExtResource("4_yxkhg")]
 position = Vector2(83, 492)
