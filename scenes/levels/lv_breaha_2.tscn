@@ -49,7 +49,7 @@ position = Vector2(841, 411)
 position = Vector2(902, 181)
 
 [node name="firefly10" parent="." instance=ExtResource("6_k2wkf")]
-position = Vector2(666, 37)
+position = Vector2(709, 34)
 
 [node name="firefly11" parent="." instance=ExtResource("6_k2wkf")]
 position = Vector2(56, 156)
