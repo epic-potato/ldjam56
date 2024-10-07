@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://b63sy7cr646p"
+path="res://.godot/imported/bug_death_smoke_poof.aseprite-996253d456c9610365ca3dad0e1a4bc4.res"
+
+[deps]
+
+source_file="res://sprites/bug_death_smoke_poof.aseprite"
+dest_files=["res://.godot/imported/bug_death_smoke_poof.aseprite-996253d456c9610365ca3dad0e1a4bc4.res"]
+
+[params]
+
