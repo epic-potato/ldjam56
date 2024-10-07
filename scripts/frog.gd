@@ -99,6 +99,7 @@ func swing(mouse_pos: Vector2) -> void:
 	if !can_swing or swinging:
 		return
 
+	audio.play_sound("slash")
 	# hitbox.position = mouse_pos.normalized() * 24
 	hitbox.activate()
 	swinging = true
@@ -309,6 +310,7 @@ func die() -> void:
 
 
 func hurt(normal: Vector2) -> void:
+	audio.play_sound("hit")
 	health -= 1
 	if tongue_state == TongueState.ATTACHED:
 		tongue_state = TongueState.RETRACT

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d0oi6csu76dad"
+path="res://.godot/imported/slash.wav-0140f868ccd7297f157235b14af25dd9.sample"
+
+[deps]
+
+source_file="res://Sounds/axe sounds/slash.wav"
+dest_files=["res://.godot/imported/slash.wav-0140f868ccd7297f157235b14af25dd9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,10 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://dxhygxhehdeol"]
+[gd_scene load_steps=9 format=3 uid="uid://dxhygxhehdeol"]
 
 [ext_resource type="Script" path="res://scripts/mosquito.gd" id="1_pfst1"]
 [ext_resource type="SpriteFrames" uid="uid://dlcwp0m77hoxw" path="res://sprites/mosquito.aseprite" id="2_nfe6w"]
+[ext_resource type="PackedScene" uid="uid://c5k23g2xcdqf" path="res://scenes/audio_player.tscn" id="3_di7yw"]
+[ext_resource type="Script" path="res://resources/named_sound.gd" id="4_oagoy"]
+[ext_resource type="AudioStream" uid="uid://toyrwjsyjxsl" path="res://Sounds/damage sounds/hit.wav" id="5_olqe1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6wvv7"]
 radius = 34.0147
+
+[sub_resource type="Resource" id="Resource_kaftg"]
+script = ExtResource("4_oagoy")
+name = "hit"
+stream = ExtResource("5_olqe1")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fxgo2"]
 radius = 18.0
@@ -19,6 +27,9 @@ autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_6wvv7")
+
+[node name="player" parent="." instance=ExtResource("3_di7yw")]
+sounds = Array[ExtResource("4_oagoy")]([SubResource("Resource_kaftg")])
 
 [node name="zone" type="Area2D" parent="."]
 collision_mask = 5

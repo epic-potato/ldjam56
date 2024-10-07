@@ -2,6 +2,7 @@ class_name Mosquito
 
 extends Firefly
 
+@onready var audio: AudioPlayer = $player
 
 var axe: AxeHitbox
 var in_range := false
@@ -19,7 +20,7 @@ func _process(dt: float):
 		return
 
 	if in_range and axe != null and axe.is_active():
-		disable() 
+		die() 
 		return
 
 	flutter(dt)
@@ -41,11 +42,11 @@ func _on_zone_body_entered(body: Node2D):
 func _on_zone_area_entered(area: Area2D):
 	if !area is AxeHitbox:
 		return
-	
+
 	in_range = true
 	axe = area as AxeHitbox
 	if axe.is_active():
-		disable()
+		die()
 
 
 func _on_zone_area_exited(area:Area2D):
@@ -54,3 +55,7 @@ func _on_zone_area_exited(area:Area2D):
 
 	in_range = false
 
+
+func die() -> void:
+	disable()
+	audio.play_sound("hit")
